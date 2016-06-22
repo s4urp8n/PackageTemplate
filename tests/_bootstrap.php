@@ -16,16 +16,16 @@ spl_autoload_register(
                                        'src',
                                    ]
             );
-
+        
         $fileName = realpath($srcDir) . DIRECTORY_SEPARATOR . str_replace(
                 '/', DIRECTORY_SEPARATOR, str_replace('\\', DIRECTORY_SEPARATOR, trim($className, '\//'))
             ) . '.php';
-
+        
         if (file_exists($fileName))
         {
             include_once $fileName;
         }
-
+        
     }
 );
 
