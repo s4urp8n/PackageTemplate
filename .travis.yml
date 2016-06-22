@@ -8,10 +8,5 @@ php:
   - 7
   - hhvm
 
-install:
-  - composer install --dev
-
 script:
-  - php vendor/bin/codecept build
-  - php vendor/bin/codecept clean
-  - php vendor/bin/codecept run
+  - php runTest.php

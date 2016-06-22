@@ -50,3 +50,9 @@ spl_autoload_register(
         }
     }
 );
+
+$composer = realpath(
+    __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php'
+);
+
+include($composer);
