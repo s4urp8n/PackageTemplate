@@ -51,6 +51,10 @@ $commands = [
             proc_terminate($webServerHandle);
         },
     ],
+    [
+        'description' => 'Add changes to Git...',
+        'command'     => 'git add tests/*',
+    ],
 ];
 
 //Executing commands and show output
