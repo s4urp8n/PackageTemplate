@@ -2,7 +2,7 @@
 
 $webServerHandle = null;
 $codeceptionStatus = null;
-$config = include 'testConfig.php';
+$config = include 'config.php';
 
 //Build commands array
 $commands = [
@@ -34,8 +34,8 @@ $commands = [
         'command'     => 'php composer-installer.php',
     ],
     [
-        'description' => 'Run Composer install with DEV...',
-        'command'     => 'php composer.phar install --dev',
+        'description' => 'Run Composer install...',
+        'command'     => 'php composer.phar install',
     ],
     [
         'description' => 'Running build-in WEB-server...',
@@ -79,17 +79,11 @@ $commands = [
         },
     ],
     [
-        'description' => 'Cleaning...',
+        'description' => 'Cleaning documentation...',
         'callback'    => function () use ($config)
         {
             $removes = [
-                'composer.phar',
-                'composer.lock',
-                'codecept.phar',
-                'composer-installer.php',
-                'vendor',
-                'tests' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp',
-                'c3.php',
+                'docs',
             ];
 
             foreach ($removes as $remove)
@@ -98,6 +92,27 @@ $commands = [
             }
         },
     ],
+    [
+        'description' => 'Generating documentation using phpDocumentor...',
+        'command'     => 'php vendor' . DIRECTORY_SEPARATOR . 'phpdocumentor' . DIRECTORY_SEPARATOR . 'phpdocumentor'
+                         . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'phpdoc -d .' . DIRECTORY_SEPARATOR
+                         . 'src -t .' . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR
+                         . 'phpdoc --template="clean" --template="xml"',
+    ],
+    //[
+    //    'description' => 'Generating documentation using phpDocMD...',
+    //    'command'     => 'php vendor/evert/phpdoc-md/bin/phpdocmd docs/phpdoc/structure.xml [outputdir]',
+    //],
+    //[
+    //    'description' => 'Cleaning...',
+    //    'callback'    => function () use ($config)
+    //    {
+    //        foreach ($config['clean'] as $remove)
+    //        {
+    //            $config['removeFunction']($remove);
+    //        }
+    //    },
+    //],
 ];
 
 //Executing commands and show output
