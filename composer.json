@@ -1,20 +1,6 @@
 {
-  "name": "<NAME>",
-  "description": "<DESCRIPTION>",
-  "keywords": [
-  ],
-  "license": "<LICENCE>",
-  "time": "<TIME>",
-  "authors": [
-    {
-      "name": "<NAME>",
-      "email": "<EMAIL>",
-      "role": "<ROLE>"
-    }
-  ],
-  "support": {
-    "email": "<EMAIL>"
-  },
+  "name": "name of package",
+  "description": "description of package",
   "autoload": {
     "psr-4": {
       "": "src/"
