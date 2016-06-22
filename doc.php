@@ -65,7 +65,7 @@ $commands = [
         },
     ],
     [
-        'description' => 'Add documentation to git...',
+        'description' => 'Add documentation to Git...',
         'command'     => 'git add docs/*',
     ],
 ];
