@@ -6,7 +6,8 @@ php:
   - 5.6
   - 7
 
-script:
+before_script:
   - php prepare.php
+
+script:
   - php test.php
-  - php doc.php
