@@ -1,5 +1,30 @@
-# This is template repository of Zver package
+# This is template repository of package
 
-Use this package to develop any package of Zver project
+Use this package to develop any package of any project
 
-Documentation wiil be auto generated
+#### Prepare package
+```
+php prepare.php
+```
+
+#### Test package
+```
+php test.php
+```
+
+#### Generate package documentation in HTML and Markdown
+```
+php doc.php
+```
+
+### Clean project
+```
+php clean.php
+```
+
+Documentation will be stored in **docs** directory
+
+Travis-CI, Composer, Codeception config examples added and ready to deploy!
+
+Enjoy!
+
