@@ -15,4 +15,7 @@ dist/
 nbdist/
 nbactions.xml
 .nb-gradle/
-
+composer.phar
+composer.lock
+composer-installer.php
+c3.php
