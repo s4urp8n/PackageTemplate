@@ -46,18 +46,18 @@ return [
             }
         }
     },
-    'removeFunction'   => function ($directory)
+    'removeFunction'   => function ($path)
     {
-        if (file_exists($directory))
+        if (file_exists($path))
         {
-            if (is_file($directory))
+            if (is_file($path))
             {
-                unlink($directory);
+                @unlink($path);
             }
             else
             {
 
-                $iterator = new RecursiveDirectoryIterator($directory, RecursiveDirectoryIterator::SKIP_DOTS);
+                $iterator = new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS);
                 $files = new RecursiveIteratorIterator(
                     $iterator, RecursiveIteratorIterator::CHILD_FIRST
                 );
@@ -65,14 +65,14 @@ return [
                 {
                     if ($file->isDir())
                     {
-                        rmdir($file->getRealPath());
+                        @rmdir($file->getRealPath());
                     }
                     else
                     {
-                        unlink($file->getRealPath());
+                        @unlink($file->getRealPath());
                     }
                 }
-                rmdir($directory);
+                @rmdir($path);
             }
         }
     },
