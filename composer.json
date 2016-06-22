@@ -1,0 +1,33 @@
+{
+  "name": "<NAME>",
+  "description": "<DESCRIPTION>",
+  "keywords": [
+  ],
+  "license": "<LICENCE>",
+  "time": "<TIME>",
+  "authors": [
+    {
+      "name": "<NAME>",
+      "email": "<EMAIL>",
+      "role": "<ROLE>"
+    }
+  ],
+  "support": {
+    "email": "<EMAIL>"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "": "tests/"
+    }
+  },
+  "require": {
+  },
+  "require-dev": {
+    "codeception/codeception": "*"
+  }
+}
