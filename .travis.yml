@@ -7,4 +7,6 @@ php:
   - 7
 
 script:
-  - php runTest.php
+  - php prepare.php
+  - php test.php
+  - php doc.php

@@ -17,11 +17,6 @@ php test.php
 php doc.php
 ```
 
-### Clean project
-```
-php clean.php
-```
-
 Documentation will be stored in **docs** directory
 
 Travis-CI, Composer, Codeception config examples added and ready to deploy!

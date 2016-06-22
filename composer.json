@@ -17,6 +17,6 @@
     "codeception/codeception": "2.*",
     "codeception/c3": "2.*",
     "phpdocumentor/phpdocumentor": "2.*",
-    "evert/phpdoc-md": "*"
+    "cvuorinen/phpdoc-markdown-public": "*"
   }
 }
