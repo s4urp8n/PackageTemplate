@@ -1,6 +1,8 @@
 # This is template repository of package
 
-Use this package to develop any package of any project
+Use this package to develop any package of any project.
+Travis-CI, Composer, Codeception config examples added and ready to deploy!
+Documentation will be stored in **docs** directory.
 
 #### Prepare package
 ```
@@ -16,10 +18,6 @@ php test.php
 ```
 php doc.php
 ```
-
-Documentation will be stored in **docs** directory
-
-Travis-CI, Composer, Codeception config examples added and ready to deploy!
 
 Enjoy!
 
