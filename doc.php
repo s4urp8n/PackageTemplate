@@ -39,7 +39,8 @@ $commands = [
                          . 'src -t .' . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'html --template="vendor'
                          . DIRECTORY_SEPARATOR . 'cvuorinen' . DIRECTORY_SEPARATOR . 'phpdoc-markdown-public'
                          . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR
-                         . 'markdown-public" --template="responsive-twig" --title="Package" --visibility="public" --sourcecode',
+                         . 'markdown-public" --template="responsive-twig" --title="' . $config['packageName']
+                         . '" --visibility="public" --sourcecode',
     ],
     [
         'description' => 'Copy markdown template...',
