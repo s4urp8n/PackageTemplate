@@ -43,7 +43,7 @@ $commands = [
     ],
     [
         'description' => 'Run Composer install...',
-        'command'     => 'composer install',
+        'command'     => 'composer install --ignore-platform-reqs',
     ],
     [
         'description' => 'Build testing...',
