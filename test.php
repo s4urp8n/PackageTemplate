@@ -1,63 +1,82 @@
 <?php
 
-$webServerHandle = null;
-$codeceptionStatus = null;
-$config = include 'tests' . DIRECTORY_SEPARATOR . 'config.php';
+//Composer classes
+include 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
-//Build commands array
+//Load configuration
+$config = include 'config.php';
+
+$webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'pages';
+$webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
+$webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
+
+$webServerProcess = new \Symfony\Component\Process\Process($webServerCommand);
+$webServerProcess->start();
+
+while (!$webServerProcess->isRunning())
+{
+    //Wait process running
+    usleep(1000);
+}
+
 $commands = [
     [
         'description' => 'Package testing started...',
     ],
     [
-        'callback'    => function ()
+        'description' => 'Cleaning...',
+        'callback'    => function () use ($config)
         {
-            //Turn on implicit flush
-            ob_implicit_flush(true);
+            $removes = [
+                'codeception',
+            ];
 
-            //Change shell directory to current
-            shell_exec(escapeshellcmd('cd ' . __DIR__));
+            foreach ($removes as $remove)
+            {
+                $config['removeFunction']($remove);
+            }
         },
-        'description' => 'Changing directory to ' . __DIR__ . ' and turning on implicit flush...',
     ],
     [
-        'description' => 'Running build-in WEB-server...',
-        'callback'    => function () use ($config, &$webServerHandle)
+        'callback' => function () use ($config)
         {
-            $pipes = [];
-            $descriptorspec = array(
-                0 => array("pipe", "r"),
-                1 => array("pipe", "w"),
-                2 => array("pipe", "w"),
-            );
-
-            $webServerHandle = proc_open('php -S ' . $config['server'], $descriptorspec, $pipes);
+            @mkdir('codeception');
         },
     ],
     [
-        'description' => 'Testing...',
-        'callback'    => function () use (&$codeceptionStatus)
+        'command' => 'php ' . $codeceptionPath . ' bootstrap codeception',
+    ],
+    [
+        'callback' => function ()
         {
-            $command = "php vendor" . DIRECTORY_SEPARATOR . "codeception" . DIRECTORY_SEPARATOR . "codeception"
-                       . DIRECTORY_SEPARATOR
-                       . "codecept run --coverage --coverage-xml --coverage-html --coverage-text --fail-fast";
-            passthru($command, $codeceptionStatus);
+            chdir('codeception');
         },
     ],
     [
-        'description' => 'Terminating build-in WEB-server...',
-        'callback'    => function () use (&$webServerHandle)
+        'description' => 'Clean testing files...',
+        'command'     => 'php ' . $codeceptionPath . ' clean',
+    ],
+    [
+        'description' => 'Clean testing files...',
+        'command'     => 'php ' . $codeceptionPath . ' build',
+    ],
+    [
+        'callback' => function ()
         {
-            proc_terminate($webServerHandle);
+            chdir('..');
         },
     ],
     [
-        'description' => 'Add changes to Git...',
-        'command'     => 'git add tests/*',
+        'description' => 'Clean testing files...',
+        'callback'    => function () use ($config)
+        {
+            copy('codeception.yml', 'codeception' . DIRECTORY_SEPARATOR . 'codeception.yml');
+            packageTemplateCopyDirectory('tests', 'codeception' . DIRECTORY_SEPARATOR . 'tests');
+        },
     ],
 ];
 
 //Executing commands and show output
 call_user_func_array($config['commandExecutor'], [$commands]);
 
-exit($codeceptionStatus);
+$webServerProcess->stop();

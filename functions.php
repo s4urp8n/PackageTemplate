@@ -1,29 +1,52 @@
 <?php
 
-return [
-    'server'           => "127.0.0.1:4444",
-    'packageName'      => "package",
-    'downloadFunction' => function ($link, $file)
+namespace PackageTemplate
+{
+
+    function copyDirectory($src, $dst)
     {
-        if (!file_exists($file))
+        $dir = opendir($src);
+        @mkdir($dst);
+        while (false !== ($file = readdir($dir)))
         {
-            $curl = curl_init();
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($curl, CURLOPT_HEADER, false);
-            curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-            curl_setopt($curl, CURLOPT_URL, $link);
-            curl_setopt($curl, CURLOPT_REFERER, $link);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            $content = curl_exec($curl);
-            curl_close($curl);
-            
-            file_put_contents($file, $content, LOCK_EX);
+            if (($file != '.') && ($file != '..'))
+            {
+                if (is_dir($src . '/' . $file))
+                {
+                    copyDirectory($src . '/' . $file, $dst . '/' . $file);
+                }
+                else
+                {
+                    copy($src . '/' . $file, $dst . '/' . $file);
+                }
+            }
         }
-    },
-    'commandExecutor'  => function ($commands)
+        closedir($dir);
+    }
+
+    function downloadFile($link, $file = null)
+    {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($curl, CURLOPT_URL, $link);
+        curl_setopt($curl, CURLOPT_REFERER, $link);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $content = curl_exec($curl);
+        curl_close($curl);
+
+        file_put_contents(
+            is_null($file)
+                ? basename($link)
+                : $file, $content, LOCK_EX
+        );
+    }
+
+    function executeCommands($commands)
     {
         $comandsCount = count($commands);
-        
+
         for ($i = 0; $i < $comandsCount; $i++)
         {
             if ($i == 0)
@@ -34,12 +57,12 @@ return [
             {
                 echo $commands[$i]['description'] . "\n\n";
             }
-            
+
             if (!empty($commands[$i]['command']))
             {
                 echo passthru($commands[$i]['command']) . "\n\n";
             }
-            
+
             if (!empty($commands[$i]['callback']))
             {
                 call_user_func(($commands[$i]['callback']));
@@ -49,8 +72,9 @@ return [
                 echo "\n\n";
             }
         }
-    },
-    'removeFunction'   => function ($path, $callback = null)
+    }
+
+    function removePath($path, $callback = null)
     {
         if (file_exists($path))
         {
@@ -93,5 +117,6 @@ return [
             }
 
         }
-    },
-];
+    }
+
+}

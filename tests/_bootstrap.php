@@ -1,58 +1,16 @@
 <?php
-/**
- * To check some variables/methods/classes which use session
- */
-session_start();
+//Composer autoloading path according to /codeception directory
+include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor'
+        . DIRECTORY_SEPARATOR . 'autoload.php';
 
-/**
- * Autoload from SRC using PSR-4
- */
-spl_autoload_register(
-    function ($className)
-    {
-        $srcDir = __DIR__ . DIRECTORY_SEPARATOR . implode(
-                DIRECTORY_SEPARATOR, [
-                                       '..',
-                                       'src',
-                                   ]
-            );
-        
-        $fileName = realpath($srcDir) . DIRECTORY_SEPARATOR . str_replace(
-                '/', DIRECTORY_SEPARATOR, str_replace('\\', DIRECTORY_SEPARATOR, trim($className, '\//'))
-            ) . '.php';
-        
-        if (file_exists($fileName))
-        {
-            include_once $fileName;
-        }
-        
-    }
+//Start session (maybe needed for some tests)
+$sessionStatus = session_status();
+if ($sessionStatus != PHP_SESSION_ACTIVE && $sessionStatus != PHP_SESSION_DISABLED)
+{
+    session_start();
+}
+
+//Autoloader from /src
+\Zver\Autoloader::register(
+    __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'src'
 );
-
-/**
- * Autoload from tests/files/classes using PSR-4
- */
-spl_autoload_register(
-    function ($className)
-    {
-        $srcDir = __DIR__ . DIRECTORY_SEPARATOR . implode(
-                DIRECTORY_SEPARATOR, [
-                                       'files',
-                                       'classes',
-                                   ]
-            );
-        $fileName = realpath($srcDir) . DIRECTORY_SEPARATOR . str_replace(
-                '/', DIRECTORY_SEPARATOR, str_replace('\\', DIRECTORY_SEPARATOR, trim($className, '\//'))
-            ) . '.php';
-        if (file_exists($fileName))
-        {
-            include_once $fileName;
-        }
-    }
-);
-
-$composer = realpath(
-    __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php'
-);
-
-include($composer);

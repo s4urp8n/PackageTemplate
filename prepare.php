@@ -1,11 +1,12 @@
 <?php
 
-$config = include 'tests' . DIRECTORY_SEPARATOR . 'config.php';
+//Load configuration
+$config = include 'config.php';
 
 //Build commands array
 $commands = [
     [
-        'description' => 'Prepare package for testing started...',
+        'description' => 'Prepare started...',
     ],
     [
         'description' => 'Cleaning...',
@@ -13,29 +14,19 @@ $commands = [
         {
             $removes = [
                 'vendor',
+                'codeception',
                 'composer.lock',
+                'apigen.phar',
+                'phpDocumentor.phar',
                 'docs',
-                'API.md',
-                'tests' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp',
                 'c3.php',
             ];
 
             foreach ($removes as $remove)
             {
-                $config['removeFunction']($remove);
+                PackageTemplate\removePath($remove);
             }
         },
-    ],
-    [
-        'callback'    => function ()
-        {
-            //Turn on implicit flush
-            ob_implicit_flush(true);
-
-            //Change shell directory to current
-            shell_exec(escapeshellcmd('cd ' . __DIR__));
-        },
-        'description' => 'Changing directory to ' . __DIR__ . ' and turning on implicit flush...',
     ],
     [
         'description' => 'Run Composer self-update...',
@@ -46,16 +37,30 @@ $commands = [
         'command'     => 'composer install',
     ],
     [
-        'description' => 'Build testing...',
-        'command'     => 'php vendor' . DIRECTORY_SEPARATOR . 'codeception' . DIRECTORY_SEPARATOR . 'codeception'
-                         . DIRECTORY_SEPARATOR . 'codecept build',
+        'callback' => function () use ($config)
+        {
+            @mkdir('codeception');
+        },
     ],
     [
-        'description' => 'Clean testing...',
-        'command'     => 'php vendor' . DIRECTORY_SEPARATOR . 'codeception' . DIRECTORY_SEPARATOR . 'codeception'
-                         . DIRECTORY_SEPARATOR . 'codecept clean',
+        'description' => 'Bootstrap testing...',
+        'command'     => 'php ' . $config['codeceptionPath'] . ' bootstrap codeception',
+    ],
+    [
+        'description' => 'Downloading Apigen...',
+        'callback'    => function () use ($config)
+        {
+            PackageTemplate\downloadFile('https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar');
+        },
+    ],
+    [
+        'description' => 'Downloading PhpDocumentor...',
+        'callback'    => function () use ($config)
+        {
+            PackageTemplate\downloadFile('http://phpdoc.org/phpDocumentor.phar');
+        },
     ],
 ];
 
 //Executing commands and show output
-call_user_func_array($config['commandExecutor'], [$commands]);
+PackageTemplate\executeCommands($commands);

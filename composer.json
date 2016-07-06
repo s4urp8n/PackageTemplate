@@ -1,6 +1,7 @@
 {
   "name": "name of package",
   "description": "description of package",
+  "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
       "": "src/"
@@ -14,9 +15,9 @@
   "require": {
   },
   "require-dev": {
-    "codeception/codeception": "2.*",
-    "codeception/c3": "2.*",
-    "phpdocumentor/phpdocumentor": "2.*",
-    "cvuorinen/phpdoc-markdown-public": "*"
+    "codeception/codeception": "^2.2",
+    "codeception/c3": "^2.0",
+    "symfony/process": "^3.1",
+    "zver/autoloader": "^1.0"
   }
 }

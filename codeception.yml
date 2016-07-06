@@ -11,13 +11,14 @@ settings:
     memory_limit: 1024M
 coverage:
     enabled: true
-    c3_url: http://127.0.0.1:4444/tests/pages/index-test.php
+    c3_url: http://127.0.0.1:4444
     remote: false
     whitelist:
         include:
             - src/*
         exclude:
             - tests/*
+            - pages/*
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
