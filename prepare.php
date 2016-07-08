@@ -33,6 +33,10 @@ $commands = [
         'command'     => 'composer self-update',
     ],
     [
+        'description' => 'Composer clear cache...',
+        'command'     => 'composer clear-cache',
+    ],
+    [
         'description' => 'Run Composer install...',
         'command'     => 'composer install',
     ],
@@ -44,7 +48,7 @@ $commands = [
     ],
     [
         'description' => 'Bootstrap testing...',
-        'command'     => 'php ' . $config['codeceptionPath'] . ' bootstrap codeception',
+        'command'     => 'php "' . $config['codeceptionPath'] . '" bootstrap codeception',
     ],
     [
         'description' => 'Downloading Apigen...',

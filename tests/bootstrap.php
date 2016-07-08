@@ -1,6 +1,6 @@
 <?php
 //Composer autoloading path according to /codeception directory
-include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor'
+include realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor')
         . DIRECTORY_SEPARATOR . 'autoload.php';
 
 //Start session (maybe needed for some tests)

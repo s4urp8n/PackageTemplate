@@ -89,9 +89,9 @@ namespace PackageTemplate
             else
             {
 
-                $iterator = new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS);
-                $files = new RecursiveIteratorIterator(
-                    $iterator, RecursiveIteratorIterator::CHILD_FIRST
+                $iterator = new \RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS);
+                $files = new \RecursiveIteratorIterator(
+                    $iterator, \RecursiveIteratorIterator::CHILD_FIRST
                 );
                 foreach ($files as $file)
                 {

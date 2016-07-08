@@ -3,7 +3,7 @@
 ob_implicit_flush(true);
 
 //Change shell directory to current
-shell_exec(escapeshellcmd('cd ' . __DIR__));
+chdir(__DIR__);
 
 include "functions.php";
 
