@@ -44,7 +44,7 @@ elseif ($_SERVER['REQUEST_URI'] == '/c3/report/serialized')
 elseif (in_array($_SERVER['REQUEST_URI'], $pages))
 {
     $page = mb_eregi_replace('/', '', $_SERVER['REQUEST_URI']);
-    include $page;
+    include __DIR__ . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR . $page;
 }
 else
 {

@@ -41,16 +41,6 @@ $commands = [
         'command'     => 'composer install',
     ],
     [
-        'callback' => function () use ($config)
-        {
-            @mkdir('codeception');
-        },
-    ],
-    [
-        'description' => 'Bootstrap testing...',
-        'command'     => 'php "' . $config['codeceptionPath'] . '" bootstrap codeception',
-    ],
-    [
         'description' => 'Downloading Apigen...',
         'callback'    => function () use ($config)
         {

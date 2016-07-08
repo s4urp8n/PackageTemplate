@@ -2,23 +2,18 @@
 
 class RemoveMeAcceptanceCest
 {
-    
-    public function _getPagePath($page)
-    {
-        //return '' . $page . '.php';
-    }
-    
+
     public function youCanRemoveThisTest1(AcceptanceTester $I)
     {
-        //$I->amOnPage('page1');
-        //$I->seeResponseCodeIs(200);
-        //$I->see('Page1');
+        $I->amOnPage('http://127.0.0.1:4444/page1.php');
+        $I->seeResponseCodeIs(200);
+        $I->see('Page1');
     }
     
     public function youCanRemoveThisTest2(AcceptanceTester $I)
     {
-        //$I->amOnPage($this->_getPagePath('page2'));
-        //$I->seeResponseCodeIs(200);
-        //$I->see('Page2');
+        $I->amOnPage('http://127.0.0.1:4444/page2.php');
+        $I->seeResponseCodeIs(200);
+        $I->see('Page2');
     }
 }
