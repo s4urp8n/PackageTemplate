@@ -15,37 +15,35 @@ $pages = scandir(__DIR__ . DIRECTORY_SEPARATOR . 'pages');
 array_shift($pages);//.
 array_shift($pages);//..
 
+$pages = array_map(
+    function ($value)
+    {
+        return '/' . $value;
+    }, $pages
+);
+
+$c3Directory = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp'
+               . DIRECTORY_SEPARATOR;
+
 if ($_SERVER['REQUEST_URI'] == '/c3/report/clover')
 {
-    echo file_get_contents(
-        __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp'
-        . DIRECTORY_SEPARATOR . 'codecoverage.clover.xml'
-    );
+    echo file_get_contents($c3Directory . 'codecoverage.clover.xml');
 }
 elseif ($_SERVER['REQUEST_URI'] == '/c3/report/clear')
 {
-    echo file_get_contents(
-        __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp'
-        . DIRECTORY_SEPARATOR . 'codecoverage.clover.xml'
-    );
+    echo file_get_contents($c3Directory . 'codecoverage.clover.xml');
 }
 elseif ($_SERVER['REQUEST_URI'] == '/c3/report/html')
 {
-    echo file_get_contents(
-        __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp'
-        . DIRECTORY_SEPARATOR . 'codecoverage.tar'
-    );
+    echo file_get_contents($c3Directory . 'codecoverage.tar');
 }
 elseif ($_SERVER['REQUEST_URI'] == '/c3/report/serialized')
 {
-    echo file_get_contents(
-        __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp'
-        . DIRECTORY_SEPARATOR . 'codecoverage.serialized'
-    );
+    echo file_get_contents($c3Directory . 'codecoverage.serialized');
 }
 elseif (in_array($_SERVER['REQUEST_URI'], $pages))
 {
-    $page = mb_eregi_replace('/tests/pages/', '', $_SERVER['REQUEST_URI']);
+    $page = mb_eregi_replace('/', '', $_SERVER['REQUEST_URI']);
     include $page;
 }
 else

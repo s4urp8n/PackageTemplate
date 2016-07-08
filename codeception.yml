@@ -15,10 +15,7 @@ coverage:
     remote: false
     whitelist:
         include:
-            - src/*
-        exclude:
-            - tests/*
-            - pages/*
+            - ../src/*
 extensions:
     enabled:
         - Codeception\Extension\RunFailed

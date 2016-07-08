@@ -12,5 +12,5 @@ if ($sessionStatus != PHP_SESSION_ACTIVE && $sessionStatus != PHP_SESSION_DISABL
 
 //Autoloader from /src
 \Zver\Autoloader::register(
-    __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'src'
+    realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR) . 'src'
 );

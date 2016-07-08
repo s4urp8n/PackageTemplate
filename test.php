@@ -6,6 +6,8 @@ include 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 //Load configuration
 $config = include 'config.php';
 
+$testResult = null;
+
 $webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'pages';
 $webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
 $webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
@@ -15,7 +17,6 @@ $webServerProcess->start();
 
 while (!$webServerProcess->isRunning())
 {
-    //Wait process running
     usleep(1000);
 }
 
@@ -33,7 +34,7 @@ $commands = [
 
             foreach ($removes as $remove)
             {
-                $config['removeFunction']($remove);
+                PackageTemplate\removePath($remove);
             }
         },
     ],
@@ -44,7 +45,7 @@ $commands = [
         },
     ],
     [
-        'command' => 'php ' . $codeceptionPath . ' bootstrap codeception',
+        'command' => 'php "' . $config['codeceptionPath'] . '" bootstrap codeception',
     ],
     [
         'callback' => function ()
@@ -54,11 +55,11 @@ $commands = [
     ],
     [
         'description' => 'Clean testing files...',
-        'command'     => 'php ' . $codeceptionPath . ' clean',
+        'command'     => 'php "' . $config['codeceptionPath'] . '" clean',
     ],
     [
         'description' => 'Clean testing files...',
-        'command'     => 'php ' . $codeceptionPath . ' build',
+        'command'     => 'php "' . $config['codeceptionPath'] . '" build',
     ],
     [
         'callback' => function ()
@@ -67,16 +68,35 @@ $commands = [
         },
     ],
     [
-        'description' => 'Clean testing files...',
+        'description' => 'Replace testing files...',
         'callback'    => function () use ($config)
         {
+            PackageTemplate\copyDirectory('tests', 'codeception' . DIRECTORY_SEPARATOR . 'tests');
             copy('codeception.yml', 'codeception' . DIRECTORY_SEPARATOR . 'codeception.yml');
-            packageTemplateCopyDirectory('tests', 'codeception' . DIRECTORY_SEPARATOR . 'tests');
+            unlink('codeception' . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . '_bootstrap.php');
+            rename(
+                'codeception' . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'bootstrap.php',
+                'codeception' . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . '_bootstrap.php'
+            );
+        },
+    ],
+    [
+        'description' => 'Testing...',
+        'callback'    => function () use ($config, &$testResult)
+        {
+            chdir('codeception');
+            $testCommand = 'php "' . $config['codeceptionPath'] . '" run ' . $config['codeceptionArguments'];
+
+            passthru($testCommand, $testResult);
+
+            chdir('..');
         },
     ],
 ];
 
 //Executing commands and show output
-call_user_func_array($config['commandExecutor'], [$commands]);
+PackageTemplate\executeCommands($commands);
 
 $webServerProcess->stop();
+
+exit($testResult);
