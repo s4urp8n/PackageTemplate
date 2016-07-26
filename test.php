@@ -25,8 +25,13 @@ $commands = [
         'description' => 'Package testing started...',
     ],
     [
-        'description' => 'Cleaning...',
-        'callback'    => function () use ($config)
+        'callback' => function () use ($config)
+        {
+            chdir(__DIR__);
+        },
+    ],
+    [
+        'callback' => function () use ($config)
         {
             $removes = [
                 'codeception',
@@ -45,7 +50,19 @@ $commands = [
         },
     ],
     [
-        'command' => 'php "' . $config['codeceptionPath'] . '" bootstrap codeception',
+        'callback' => function () use ($config)
+        {
+            chdir('codeception');
+        },
+    ],
+    [
+        'command' => 'php "' . $config['codeceptionPath'] . '" bootstrap',
+    ],
+    [
+        'callback' => function () use ($config)
+        {
+            chdir(__DIR__);
+        },
     ],
     [
         'description' => 'Replace testing files...',
@@ -53,7 +70,7 @@ $commands = [
         {
             PackageTemplate\copyDirectory('tests', 'codeception' . DIRECTORY_SEPARATOR . 'tests');
             PackageTemplate\copyDirectory('src', 'codeception' . DIRECTORY_SEPARATOR . 'src');
-            copy('codeception.yml', 'codeception' . DIRECTORY_SEPARATOR . 'codeception.yml');
+            copy('.codeception.yml', 'codeception' . DIRECTORY_SEPARATOR . 'codeception.yml');
             unlink('codeception' . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . '_bootstrap.php');
             rename(
                 'codeception' . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'bootstrap.php',
@@ -62,8 +79,7 @@ $commands = [
         },
     ],
     [
-        'description' => 'Testing...',
-        'callback'    => function () use ($config, &$testResult)
+        'callback' => function () use ($config, &$testResult)
         {
             chdir('codeception');
         },
@@ -80,11 +96,8 @@ $commands = [
         'description' => 'Testing...',
         'callback'    => function () use ($config, &$testResult)
         {
-
             $testCommand = 'php "' . $config['codeceptionPath'] . '" run ' . $config['codeceptionArguments'];
-            echo $testCommand;
-            //passthru($testCommand, $testResult);
-
+            passthru($testCommand, $testResult);
         },
     ],
 ];
