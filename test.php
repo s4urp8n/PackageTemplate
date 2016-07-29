@@ -15,6 +15,7 @@ $commands = [
     [
         'callback' => function () use ($config)
         {
+            ob_start();
             chdir(__DIR__);
         },
     ],
@@ -54,6 +55,7 @@ $commands = [
         'description' => 'Testing...',
         'callback'    => function () use ($config, &$testResult)
         {
+            ob_get_clean();
             
             $webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'package' . DIRECTORY_SEPARATOR . 'pages';
             $webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
