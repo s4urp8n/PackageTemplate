@@ -16,6 +16,6 @@
 
   },
   "require-dev": {
-    "codeception/c3": "2.*"
+
   }
 }

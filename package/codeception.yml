@@ -12,8 +12,7 @@ settings:
     memory_limit: 1024M
 coverage:
     enabled: true
-    c3_url: http://127.0.0.1:4444
-    remote: true
+    remote: false
     whitelist:
         include:
             - package/src

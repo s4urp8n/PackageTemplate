@@ -14,20 +14,20 @@ $webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '
 
 echo $webServerCommand . "\n";
 
-//$webServerProcess = proc_open(
-//    $webServerCommand, [
-//    ["pipe", "r"],
-//    ["pipe", "w"],
-//    ["pipe", "w"],
-//], $pipesWebServer
-//);
-//
-//echo "Webserver loading...";
-//while (!is_resource($webServerProcess))
-//{
-//    echo ".";
-//}
-//echo "\n";
+$webServerProcess = proc_open(
+    $webServerCommand, [
+    ["pipe", "r"],
+    ["pipe", "w"],
+    ["pipe", "w"],
+], $pipesWebServer
+);
+
+echo "Webserver loading...";
+while (!is_resource($webServerProcess))
+{
+    echo ".";
+}
+echo "\n";
 
 $commands = [
     [
@@ -36,7 +36,6 @@ $commands = [
     [
         'callback' => function () use ($config)
         {
-            ob_start();
             chdir(__DIR__);
         },
     ],
@@ -73,10 +72,7 @@ $commands = [
         'description' => 'Testing...',
         'callback'    => function () use ($config, &$testResult)
         {
-            ob_get_clean();
-            
             $testCommand = 'php codecept.phar run ' . $config['codeceptionArguments'];
-            //echo $testCommand;
             passthru($testCommand, $testResult);
             
         },
@@ -92,9 +88,9 @@ $commands = [
 //Executing commands and show output
 PackageTemplate\executeCommands($commands);
 
-//$pstatus = proc_get_status($webServerProcess);
-//$pid = $pstatus['pid'];
-//PackageTemplate\kill($pid);
+$pstatus = proc_get_status($webServerProcess);
+$pid = $pstatus['pid'];
+PackageTemplate\kill($pid);
 
 echo 'Exit code: [' . $testResult . "]\n";
 
