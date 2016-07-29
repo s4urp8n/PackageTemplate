@@ -22,7 +22,7 @@ $pages = array_map(
     }, $pages
 );
 
-$c3Directory = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp'
+$c3Directory = __DIR__ . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . '_output' . DIRECTORY_SEPARATOR . 'c3tmp'
                . DIRECTORY_SEPARATOR;
 
 if ($_SERVER['REQUEST_URI'] == '/c3/report/clover')

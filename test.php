@@ -12,20 +12,22 @@ $webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'package' . DIRECTORY_SEPARATOR
 $webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
 $webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
 
-$webServerProcess = proc_open(
-    $webServerCommand, [
-    ["pipe", "r"],
-    ["pipe", "w"],
-    ["pipe", "w"],
-], $pipesWebServer
-);
+echo $webServerCommand . "\n";
 
-echo "Webserver loading...";
-while (!is_resource($webServerProcess))
-{
-    echo ".";
-}
-echo "\n";
+//$webServerProcess = proc_open(
+//    $webServerCommand, [
+//    ["pipe", "r"],
+//    ["pipe", "w"],
+//    ["pipe", "w"],
+//], $pipesWebServer
+//);
+//
+//echo "Webserver loading...";
+//while (!is_resource($webServerProcess))
+//{
+//    echo ".";
+//}
+//echo "\n";
 
 $commands = [
     [
@@ -65,9 +67,6 @@ $commands = [
         },
     ],
     [
-        'command' => 'php codecept.phar clean',
-    ],
-    [
         'command' => 'php codecept.phar build',
     ],
     [
@@ -77,6 +76,7 @@ $commands = [
             ob_get_clean();
             
             $testCommand = 'php codecept.phar run ' . $config['codeceptionArguments'];
+            //echo $testCommand;
             passthru($testCommand, $testResult);
             
         },
@@ -90,18 +90,11 @@ $commands = [
 ];
 
 //Executing commands and show output
-try
-{
-    PackageTemplate\executeCommands($commands);
-}
-catch (Exception $e)
-{
-    
-}
+PackageTemplate\executeCommands($commands);
 
-$pstatus = proc_get_status($webServerProcess);
-$pid = $pstatus['pid'];
-PackageTemplate\kill($pid);
+//$pstatus = proc_get_status($webServerProcess);
+//$pid = $pstatus['pid'];
+//PackageTemplate\kill($pid);
 
 echo 'Exit code: [' . $testResult . "]\n";
 
