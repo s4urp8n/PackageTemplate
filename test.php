@@ -124,4 +124,6 @@ $pid = $pstatus['pid'];
 
 PackageTemplate\kill($pid);
 
+echo 'Exit code: [' . $testResult . "]\n";
+
 exit($testResult);
