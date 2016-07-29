@@ -46,6 +46,13 @@ $commands = [
             PackageTemplate\downloadFile('https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar');
         },
     ],
+    [
+        'description' => 'Downloading Codeception...',
+        'callback'    => function () use ($config)
+        {
+            PackageTemplate\downloadFile('http://codeception.com/releases/2.2.3/codecept.phar');
+        },
+    ],
 ];
 
 //Executing commands and show output
