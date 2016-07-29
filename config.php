@@ -13,5 +13,5 @@ include "functions.php";
 return [
     'server'               => "127.0.0.1:4444",
     'packageName'          => "package",
-    'codeceptionArguments' => '--skip functional --skip acceptance --coverage-xml --coverage-html --coverage-text',
+    'codeceptionArguments' => '--skip functional --skip acceptance --coverage-xml --coverage-html --coverage-text --coverage',
 ];
