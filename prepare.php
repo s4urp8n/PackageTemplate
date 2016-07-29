@@ -14,7 +14,7 @@ $commands = [
         {
             $removes = [
                 'vendor',
-                'codeception',
+                'codeception.phar',
                 'composer.lock',
                 'apigen.phar',
                 'docs',

@@ -3,6 +3,11 @@
 namespace PackageTemplate
 {
     
+    function getRoot()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR;
+    }
+    
     function kill($pid)
     {
         return stripos(php_uname('s'), 'win') > -1
@@ -77,25 +82,6 @@ namespace PackageTemplate
             if ($i == $comandsCount - 1)
             {
                 echo "\n\n";
-            }
-        }
-    }
-    
-    function chmodRecursive($path, $mode)
-    {
-        if (is_file($path))
-        {
-            \chmod($path, $mode);
-        }
-        else
-        {
-            $iterator = new \RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS);
-            $files = new \RecursiveIteratorIterator(
-                $iterator, \RecursiveIteratorIterator::CHILD_FIRST
-            );
-            foreach ($files as $file)
-            {
-                \chmod($file, $mode);
             }
         }
     }

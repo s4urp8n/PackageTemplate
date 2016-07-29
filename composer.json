@@ -4,20 +4,18 @@
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "": "package/src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "": "tests/"
+      "": "package/tests/"
     }
   },
   "require": {
+
   },
   "require-dev": {
-    "codeception/codeception": "2.*",
-    "codeception/c3": "2.*",
-    "symfony/process": "3.*",
-    "zver/autoloader": "1.*"
+    "codeception/c3": "2.*"
   }
 }

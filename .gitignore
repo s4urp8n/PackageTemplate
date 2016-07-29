@@ -7,8 +7,9 @@ dist/
 nbdist/
 nbactions.xml
 vendor/
-codeception/
+codeception.phar
 c3.php
 composer.lock
 phpDocumentor.phar
 apigen.phar
+tests/_output/*
