@@ -8,17 +8,17 @@ $config = include 'config.php';
 
 $testResult = null;
 
-//$webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'pages';
-//$webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
-//$webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
-//
-//$webServerProcess = new \Symfony\Component\Process\Process($webServerCommand);
-//$webServerProcess->start();
-//
-//while (!$webServerProcess->isRunning())
-//{
-//    usleep(1000);
-//}
+$webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'pages';
+$webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
+$webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
+
+$webServerProcess = new \Symfony\Component\Process\Process($webServerCommand);
+$webServerProcess->start();
+
+while (!$webServerProcess->isRunning())
+{
+    usleep(1000);
+}
 
 $commands = [
     [
@@ -36,7 +36,7 @@ $commands = [
             $removes = [
                 'codeception',
             ];
-
+            
             foreach ($removes as $remove)
             {
                 PackageTemplate\removePath($remove);
@@ -103,8 +103,15 @@ $commands = [
 ];
 
 //Executing commands and show output
-PackageTemplate\executeCommands($commands);
+try
+{
+    PackageTemplate\executeCommands($commands);
+}
+catch (Exception $e)
+{
+    
+}
 
-//$webServerProcess->stop();
+$webServerProcess->stop();
 
 exit($testResult);
