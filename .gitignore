@@ -1,5 +1,6 @@
 .idea/
 .idea_modules/
+node_modules/
 nbproject/
 build/
 nbbuild/
