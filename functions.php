@@ -3,6 +3,11 @@
 namespace PackageTemplate
 {
     
+    function page($page)
+    {
+        return "http://127.0.0.1:4444/" . $page . '.php';
+    }
+    
     function getRoot()
     {
         return __DIR__ . DIRECTORY_SEPARATOR;
