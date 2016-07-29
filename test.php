@@ -8,6 +8,25 @@ $config = include 'config.php';
 
 $testResult = null;
 
+$webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'package' . DIRECTORY_SEPARATOR . 'pages';
+$webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
+$webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
+
+$webServerProcess = proc_open(
+    $webServerCommand, [
+    ["pipe", "r"],
+    ["pipe", "w"],
+    ["pipe", "w"],
+], $pipesWebServer
+);
+
+echo "Webserver loading...";
+while (!is_resource($webServerProcess))
+{
+    echo ".";
+}
+echo "\n";
+
 $commands = [
     [
         'description' => 'Package testing started...',
@@ -57,32 +76,8 @@ $commands = [
         {
             ob_get_clean();
             
-            $webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'package' . DIRECTORY_SEPARATOR . 'pages';
-            $webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
-            $webServerCommand =
-                'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
-            
-            $webServerProcess = proc_open(
-                $webServerCommand, [
-                ["pipe", "r"],
-                ["pipe", "w"],
-                ["pipe", "w"],
-            ], $pipesWebServer
-            );
-            
-            echo "Webserver loading...";
-            while (!is_resource($webServerProcess))
-            {
-                echo ".";
-            }
-            echo "\n";
-            
             $testCommand = 'php codecept.phar run ' . $config['codeceptionArguments'];
             passthru($testCommand, $testResult);
-            
-            $pstatus = proc_get_status($webServerProcess);
-            $pid = $pstatus['pid'];
-            PackageTemplate\kill($pid);
             
         },
     ],
@@ -90,7 +85,7 @@ $commands = [
         /**
          * Restore gitignore from changes by codeception
          */
-        'command' => 'git checkout .gitignore',
+        'command' => 'git checkout -f .gitignore',
     ],
 ];
 
@@ -103,6 +98,10 @@ catch (Exception $e)
 {
     
 }
+
+$pstatus = proc_get_status($webServerProcess);
+$pid = $pstatus['pid'];
+PackageTemplate\kill($pid);
 
 echo 'Exit code: [' . $testResult . "]\n";
 
