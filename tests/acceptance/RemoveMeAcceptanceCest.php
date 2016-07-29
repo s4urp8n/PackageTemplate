@@ -2,7 +2,7 @@
 
 class RemoveMeAcceptanceCest
 {
-
+    
     public function youCanRemoveThisTest1(AcceptanceTester $I)
     {
         $I->amOnPage('http://127.0.0.1:4444/page1.php');
