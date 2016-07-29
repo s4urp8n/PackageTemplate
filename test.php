@@ -72,8 +72,13 @@ $commands = [
         'description' => 'Testing...',
         'callback'    => function () use ($config, &$testResult)
         {
+            $testCommand = 'php codecept.phar run acceptance';
+            passthru($testCommand, $acceptanceResult);
+            
             $testCommand = 'php codecept.phar run ' . $config['codeceptionArguments'];
             passthru($testCommand, $testResult);
+            
+            $testResult = intval($acceptanceResult) + intval($testResult);
             
         },
     ],
