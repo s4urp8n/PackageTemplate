@@ -8,7 +8,7 @@ dist/
 nbdist/
 nbactions.xml
 vendor/
-codeception.phar
+codecept.phar
 codeception.yml
 c3.php
 composer.lock
