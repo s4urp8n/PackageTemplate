@@ -12,5 +12,5 @@ return [
     'packageName'          => "package",
     'codeceptionPath'      => __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'codeception'
                               . DIRECTORY_SEPARATOR . 'codeception' . DIRECTORY_SEPARATOR . 'codecept',
-    'codeceptionArguments' => '--coverage --coverage-xml --coverage-html --coverage-text',
+    'codeceptionArguments' => ''//'--coverage-xml --coverage-html --coverage-text',
 ];

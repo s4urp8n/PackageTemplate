@@ -12,13 +12,20 @@ $webServerRoot = __DIR__ . DIRECTORY_SEPARATOR . 'pages';
 $webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
 $webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
 
-$webServerProcess = new \Symfony\Component\Process\Process($webServerCommand);
-$webServerProcess->start();
+$webServerProcess = proc_open(
+    $webServerCommand, [
+    ["pipe", "r"],
+    ["pipe", "w"],
+    ["pipe", "w"],
+], $pipesWebServer
+);
 
-while (!$webServerProcess->isRunning())
+echo "Webserver loading...";
+while (!is_resource($webServerProcess))
 {
-    usleep(1000);
+    echo ".";
 }
+echo "\n";
 
 $commands = [
     [
@@ -112,6 +119,9 @@ catch (Exception $e)
     
 }
 
-$webServerProcess->stop();
+$pstatus = proc_get_status($webServerProcess);
+$pid = $pstatus['pid'];
+
+PackageTemplate\kill($pid);
 
 exit($testResult);

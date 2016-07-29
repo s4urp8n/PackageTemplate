@@ -2,7 +2,14 @@
 
 namespace PackageTemplate
 {
-
+    
+    function kill($pid)
+    {
+        return stripos(php_uname('s'), 'win') > -1
+            ? exec("taskkill /F /T /PID $pid")
+            : exec("kill -9 $pid");
+    }
+    
     function copyDirectory($src, $dst)
     {
         $dir = opendir($src);
@@ -23,7 +30,7 @@ namespace PackageTemplate
         }
         closedir($dir);
     }
-
+    
     function downloadFile($link, $file = null)
     {
         $curl = curl_init();
@@ -35,18 +42,18 @@ namespace PackageTemplate
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $content = curl_exec($curl);
         curl_close($curl);
-
+        
         file_put_contents(
             is_null($file)
                 ? basename($link)
                 : $file, $content, LOCK_EX
         );
     }
-
+    
     function executeCommands($commands)
     {
         $comandsCount = count($commands);
-
+        
         for ($i = 0; $i < $comandsCount; $i++)
         {
             if ($i == 0)
@@ -57,12 +64,12 @@ namespace PackageTemplate
             {
                 echo $commands[$i]['description'] . "\n\n";
             }
-
+            
             if (!empty($commands[$i]['command']))
             {
                 echo passthru($commands[$i]['command']) . "\n\n";
             }
-
+            
             if (!empty($commands[$i]['callback']))
             {
                 call_user_func(($commands[$i]['callback']));
@@ -73,12 +80,12 @@ namespace PackageTemplate
             }
         }
     }
-
+    
     function removePath($path, $callback = null)
     {
         if (file_exists($path))
         {
-
+            
             if (is_file($path))
             {
                 if (is_null($callback) || (is_callable($callback) && $callback($path) === true))
@@ -88,7 +95,7 @@ namespace PackageTemplate
             }
             else
             {
-
+                
                 $iterator = new \RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS);
                 $files = new \RecursiveIteratorIterator(
                     $iterator, \RecursiveIteratorIterator::CHILD_FIRST
@@ -115,8 +122,8 @@ namespace PackageTemplate
                     @rmdir($path);
                 }
             }
-
+            
         }
     }
-
+    
 }
