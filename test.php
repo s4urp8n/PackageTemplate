@@ -100,6 +100,15 @@ $commands = [
         'command'     => 'php "' . $config['codeceptionPath'] . '" build',
     ],
     [
+        'callback' => function () use ($config)
+        {
+            PackageTemplate\chmodRecursive(__DIR__ . DIRECTORY_SEPARATOR . 'codeception', 0777);
+            PackageTemplate\chmodRecursive(
+                __DIR__ . DIRECTORY_SEPARATOR . 'codeception' . DIRECTORY_SEPARATOR . 'src', 0777
+            );
+        },
+    ],
+    [
         'description' => 'Testing...',
         'callback'    => function () use ($config, &$testResult)
         {

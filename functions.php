@@ -81,6 +81,25 @@ namespace PackageTemplate
         }
     }
     
+    function chmodRecursive($path, $mode)
+    {
+        if (is_file($path))
+        {
+            \chmod($path, $mode);
+        }
+        else
+        {
+            $iterator = new \RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS);
+            $files = new \RecursiveIteratorIterator(
+                $iterator, \RecursiveIteratorIterator::CHILD_FIRST
+            );
+            foreach ($files as $file)
+            {
+                \chmod($file, $mode);
+            }
+        }
+    }
+    
     function removePath($path, $callback = null)
     {
         if (file_exists($path))
