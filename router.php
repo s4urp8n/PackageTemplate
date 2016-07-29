@@ -27,19 +27,19 @@ $c3Directory = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_ou
 
 if ($_SERVER['REQUEST_URI'] == '/c3/report/clover')
 {
-    //echo file_get_contents($c3Directory . 'codecoverage.clover.xml');
+    echo file_get_contents($c3Directory . 'codecoverage.clover.xml');
 }
 elseif ($_SERVER['REQUEST_URI'] == '/c3/report/clear')
 {
-    //echo file_get_contents($c3Directory . 'codecoverage.clover.xml');
+    echo file_get_contents($c3Directory . 'codecoverage.clover.xml');
 }
 elseif ($_SERVER['REQUEST_URI'] == '/c3/report/html')
 {
-    //echo file_get_contents($c3Directory . 'codecoverage.tar');
+    echo file_get_contents($c3Directory . 'codecoverage.tar');
 }
 elseif ($_SERVER['REQUEST_URI'] == '/c3/report/serialized')
 {
-    //echo file_get_contents($c3Directory . 'codecoverage.serialized');
+    echo file_get_contents($c3Directory . 'codecoverage.serialized');
 }
 elseif (in_array($_SERVER['REQUEST_URI'], $pages))
 {

@@ -9,6 +9,15 @@ settings:
     bootstrap: _bootstrap.php
     colors: true
     memory_limit: 1024M
+coverage:
+    enabled: true
+    c3_url: http://127.0.0.1:4444/
+    remote: true
+    whitelist:
+        include:
+            - package/src/*
+        exclude:
+            - package/tests/*
 extensions:
     enabled:
         - Codeception\Extension\RunFailed

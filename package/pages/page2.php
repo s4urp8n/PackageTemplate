@@ -1,1 +1,1 @@
-Page2
+<?php RemoveMe::method2() ?>Page2
