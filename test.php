@@ -48,6 +48,7 @@ $commands = [
         {
             $removes = [
                 'tests',
+                'docs',
                 'codeception.yml',
             ];
             

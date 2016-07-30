@@ -34,6 +34,7 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * /package/tests/_bootstrap.php - Codeception tests bootstrap ( usually uses for autoloading classes what used in tests)
 * /package/codeception.yml - Codeception main config
 * /package/pages - This directory store pages which you can use in acceptance tests. **!!!If this directory inexists acceptance tests will NOT be run!!!**
+* /package/docs - This directory store documentation of your source files 
 
 
 ## This is example of source documentation

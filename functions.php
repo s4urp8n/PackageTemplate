@@ -5,11 +5,14 @@ namespace PackageTemplate
     
     function updateReadme($config)
     {
+        echo "Updating README...";
         chdir(__DIR__);
         
         $readme = $config['readme'];
         
-        file_put_contents('README.md', $readme);
+        file_put_contents('README.md', $readme, LOCK_EX);
+        
+        echo "\n";
     }
     
     function isPagesExists()
