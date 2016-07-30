@@ -35,7 +35,14 @@ $commands = [
     [
         'callback' => function () use ($config)
         {
+            PackageTemplate\updateReadme($config);
+        },
+    ],
+    [
+        'callback' => function () use ($config)
+        {
             passthru('git add docs');
+            passthru('git add README.md');
         },
     ],
 ];

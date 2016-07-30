@@ -3,6 +3,15 @@
 namespace PackageTemplate
 {
     
+    function updateReadme($config)
+    {
+        chdir(__DIR__);
+        
+        $readme = $config['readme'];
+        
+        file_put_contents('README.md', $readme);
+    }
+    
     function isPagesExists()
     {
         return file_exists('package' . DIRECTORY_SEPARATOR . 'pages');
