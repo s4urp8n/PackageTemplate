@@ -5,10 +5,10 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 
 ## That's included?
 
-* Codeception 2.2.3 (Acceptance and Unit tests) [Codeception](http://codeception.com/)
-* Travis-CI config files to easy CI [Travis-CI](https://travis-ci.org/)
-* Composer config file to easy create Packagist package [Composer](https://getcomposer.org/) [Packagist](https://packagist.org/)
-* Apigen to documentation generation [Apigen](http://www.apigen.org/)
+* [Codeception](http://codeception.com/) 2.2.3 (Acceptance and Unit tests) 
+* [Travis-CI](https://travis-ci.org/) config files to easy CI 
+* [Composer](https://getcomposer.org/) config file to easy create [Packagist](https://packagist.org/) package 
+* [Apigen](http://www.apigen.org/) to documentation generation 
 * Github README.md auto generation
 
 ## Requirements
