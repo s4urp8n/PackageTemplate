@@ -60,6 +60,7 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 
 ## Demostration
 
+![Demonstaration](https://github.com/s4urp8n/package-template/raw/master/package/tests/files/demo.gif)
 
 ## This is example of source code quality
 
