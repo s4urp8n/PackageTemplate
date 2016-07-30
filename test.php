@@ -15,7 +15,7 @@ if (PackageTemplate\isPagesExists())
     $webServerRouter = __DIR__ . DIRECTORY_SEPARATOR . 'router.php';
     $webServerCommand = 'php -S ' . $config['server'] . ' -t "' . $webServerRoot . '" "' . $webServerRouter . '"';
     
-    echo $webServerCommand . "\n";
+    echo "\nWebserver command is :" . $webServerCommand . "\n";
     
     $webServerProcess = proc_open(
         $webServerCommand, [

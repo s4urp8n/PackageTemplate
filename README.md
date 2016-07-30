@@ -31,6 +31,8 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * /package/tests - this directory store Codeception config files and tests
 * /package/tests/acceptance - Codeception acceptance tests
 * /package/tests/unit - Codeception unit tests
+* /package/tests/files - If you need some additional files for tests, put it here. Paths of files you can get using \PackageTemplate::files('path') method.
+* /package/tests/files - If you need some additional classes for tests, put it here. Classes will be automatically loaded during testing (PSR-4).  
 * /package/tests/_bootstrap.php - Codeception tests bootstrap ( usually uses for autoloading classes what used in tests)
 * /package/codeception.yml - Codeception main config
 * /package/pages - This directory store pages which you can use in acceptance tests. **!!!If this directory inexists acceptance tests will NOT be run!!!**
@@ -43,14 +45,17 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * function.php - Package-helper functions
 * router.php - Route for PHP-webserver to find pages stored in /package/pages
 
+## Demostration
+
+
 ## This is example of source code quality
 
-_CODECLIMATE_HERE_
+_CODECLIMATE_HERE_ TODO: Code quality results here
 
 ## This is example of coverage
 
-_COVERAGE_HERE_
+_COVERAGE_HERE_ TODO: Coverage results here
 
 ## This is example of source documentation
 
-_API_HERE_
+_API_HERE_ TODO: Documentation markdown here
