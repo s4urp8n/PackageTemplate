@@ -2,6 +2,9 @@
   "name": "name of package",
   "description": "description of package",
   "minimum-stability": "stable",
+  "config": {
+    "optimize-autoloader": true
+  },
   "autoload": {
     "psr-4": {
       "": "package/src/"
@@ -13,9 +16,7 @@
     }
   },
   "require": {
-
   },
   "require-dev": {
-
   }
 }
