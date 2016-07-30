@@ -48,11 +48,18 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * /package/codeception.yml - Codeception main config
 * /package/pages - This directory store pages which you can use in acceptance tests. **If this directory inexists acceptance tests will NOT be run**
 
-## This is example of readme documentation
+
+## This is example of source documentation
+
+_API_HERE_
+
+## This is example of source code quality
+
+_CODECLIMATE_HERE_
+
+## This is example of coverage
 
 _COVERAGE_HERE_
-_CODECLIMATE_HERE_
-_API_HERE_
 
 README;
 
