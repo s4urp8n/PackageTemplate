@@ -3,14 +3,28 @@
 namespace PackageTemplate
 {
     
+    use Zver\StringHelper;
+    
     function updateGitignore()
     {
         /**
          * Codeception tests/_output fix
          */
         $gitignore = preg_replace('/^tests[^\s]+\s*/im', '', file_get_contents('.gitignore'));
+        $gitignore = preg_replace('/^\s*$/im', '', $gitignore);
         file_put_contents('.gitignore', $gitignore, LOCK_EX);
         
+    }
+    
+    function testFile($path)
+    {
+        $dir = __DIR__ . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR;
+        
+        return StringHelper::load($path)
+                           ->removeBeginning('/')
+                           ->replace('/', DIRECTORY_SEPARATOR)
+                           ->prepend($dir)
+                           ->get();
     }
     
     function updateReadme($config)

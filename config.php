@@ -44,7 +44,7 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * /package/tests - this directory store Codeception config files and tests
 * /package/tests/acceptance - Codeception acceptance tests
 * /package/tests/unit - Codeception unit tests
-* /package/tests/files - If you need some additional files for tests, put it here. Paths of files you can get using \PackageTemplate::files('path') method.
+* /package/tests/files - If you need some additional files for tests, put it here. Paths of files you can get using \PackageTemplate::testFile('path') method.
 * /package/tests/files - If you need some additional classes for tests, put it here. Classes will be automatically loaded during testing (PSR-4).  
 * /package/tests/_bootstrap.php - Codeception tests bootstrap ( usually uses for autoloading classes what used in tests)
 * /package/codeception.yml - Codeception main config
