@@ -31,12 +31,12 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 ## How to use?
 
 * Open console (command line) 
-* Change rurrent dir to root of your project: **cd /root/of/your/project**
-* Copy this package to root of your project: **composer create-project zver/package-template ./** (./ means install in current directory) */
+* Change current working dir to root of your project: **cd /root/of/your/project**
+* Copy this package to root of your project: **composer create-project zver/package-template ./** (./ means install in current directory) or just copy files manually
 * Run command to prepare package: **php prepare.php**
 * Run command to test package: **php test.php**
 * Run command to generate documentation: **php doc.php**
-* All ready to develop you package! Do it!
+* All ready to develop you package! Do it! Change config.php, source files, tests, this readme text, etc... to create amazing package!
 
 ## Directory structure
 
