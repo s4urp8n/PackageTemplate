@@ -41,8 +41,8 @@ $commands = [
     [
         'callback' => function () use ($config)
         {
-            passthru('git add /docs');
-            passthru('git add /README.md');
+            passthru('git add docs');
+            passthru('git add README.md');
         },
     ],
 ];
