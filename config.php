@@ -76,7 +76,7 @@ README;
 
 return [
     'server'               => "127.0.0.1:4444",
-    'packageName'          => "package",
+    'packageName'          => "zver/package-template",
     'codeceptionArguments' => '--skip functional --skip acceptance --coverage-xml --coverage-html --coverage-text --coverage',
     'readme'               => $readme,
 ];
