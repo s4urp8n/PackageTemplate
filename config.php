@@ -26,7 +26,7 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * [Travis-CI](https://travis-ci.org/) config files to easy CI 
 * [Composer](https://getcomposer.org/) config file to easy create [Packagist](https://packagist.org/) package 
 * [Apigen](http://www.apigen.org/) to documentation generation 
-* Github README.md auto generation
+* Github README.md auto generation with coverage report
 
 ## Requirements
 
