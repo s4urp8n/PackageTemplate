@@ -35,11 +35,13 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * /package/codeception.yml - Codeception main config
 * /package/pages - This directory store pages which you can use in acceptance tests. **!!!If this directory inexists acceptance tests will NOT be run!!!**
 * /package/docs - This directory store documentation of your source files 
-
-
-## This is example of source documentation
-
-_API_HERE_
+* composer.json - Composer dependencies 
+* config.php - You package config file 
+* prepare.php - Prepare script 
+* test.php - Test script 
+* doc.php - Doc script 
+* function.php - Package-helper functions
+* router.php - Route for PHP-webserver to find pages stored in /package/pages
 
 ## This is example of source code quality
 
@@ -48,3 +50,7 @@ _CODECLIMATE_HERE_
 ## This is example of coverage
 
 _COVERAGE_HERE_
+
+## This is example of source documentation
+
+_API_HERE_
