@@ -2,7 +2,7 @@
 namespace Demo
 {
     
-    class DemoRemoveMe
+    class DemoRemoveMe2
     {
         
     }

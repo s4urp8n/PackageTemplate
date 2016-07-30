@@ -93,12 +93,6 @@ $commands = [
             
         },
     ],
-    [
-        /**
-         * Restore gitignore from changes by codeception
-         */
-        'command' => 'git checkout /.gitignore',
-    ],
 ];
 
 //Executing commands and show output

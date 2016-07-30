@@ -15,3 +15,10 @@
 /phpDocumentor.phar
 /apigen.phar
 /tests/
+tests/_output/*
+tests/_output/*
+tests/_output/*
+tests/_output/*
+tests/_output/*
+tests/_output/*
+tests/_output/*

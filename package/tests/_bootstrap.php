@@ -13,4 +13,4 @@ include(realpath(
     __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'functions.php'
 ));
 
-Zver\Autoloader::register(__DIR__ . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'classes');
+Zver\Autoloader::register(__DIR__ . DIRECTORY_SEPARATOR . 'classes');

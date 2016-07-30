@@ -55,12 +55,6 @@ $commands = [
             PackageTemplate\downloadFile('http://codeception.com/releases/2.2.3/codecept.phar');
         },
     ],
-    [
-        /**
-         * Restore gitignore from changes by codeception
-         */
-        'command' => 'git checkout /.gitignore',
-    ],
 ];
 
 //Executing commands and show output
