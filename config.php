@@ -16,6 +16,10 @@ $readme = <<<README
 
 Use this package to create auto-tested, auto-integrated and auto-documented packages for all your projects
 
+## Demostration
+
+![Demonstration](https://github.com/s4urp8n/package-template/raw/master/package/tests/files/demo.gif)
+
 ## That's included?
 
 * [Codeception](http://codeception.com/) 2.2.3 (Acceptance and Unit tests) 
@@ -57,10 +61,6 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * doc.php - Doc script 
 * function.php - Package-helper functions
 * router.php - Route for PHP-webserver to find pages stored in /package/pages
-
-## Demostration
-
-![Demonstration](https://github.com/s4urp8n/package-template/raw/master/package/tests/files/demo.gif)
 
 ## This is example of coverage report
 
