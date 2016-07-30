@@ -30,9 +30,9 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 
 ## How to use?
 
-* Copy this package to root of your project
 * Open console (command line) 
 * Change rurrent dir to root of your project: **cd /root/of/your/project**
+* Copy this package to root of your project: **composer create-project zver/package-template ./** (./ means install in current directory) */
 * Run command to prepare package: **php prepare.php**
 * Run command to test package: **php test.php**
 * Run command to generate documentation: **php doc.php**
