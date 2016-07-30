@@ -1,6 +1,6 @@
 {
-  "name": "name of package",
-  "description": "description of package",
+  "name": "zver/package-template",
+  "description": "this is universal package template",
   "minimum-stability": "stable",
   "config": {
     "optimize-autoloader": true
