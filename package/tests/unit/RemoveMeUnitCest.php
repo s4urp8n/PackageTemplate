@@ -5,6 +5,14 @@ class RemoveMeUnitCest
     
     public function youCanRemoveThisTest1(UnitTester $I)
     {
+        /**
+         * Test autoloading from /tests/classes
+         */
+        
+        $autoloaded = new Demo\DemoRemoveMe1();
+        $autoloaded = new Demo\DemoRemoveMe2();
+        $autoloaded = new DemoRemoveMe();
+        
         $I->assertSame(RemoveMe::method1(), 1);
     }
     

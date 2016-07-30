@@ -59,7 +59,7 @@ $commands = [
         /**
          * Restore gitignore from changes by codeception
          */
-        'command' => 'git checkout -f .gitignore',
+        'command' => 'git checkout /.gitignore',
     ],
 ];
 
