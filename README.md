@@ -47,16 +47,20 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 
 ## Demostration
 
-![Demonstaration](https://github.com/s4urp8n/package-template/raw/master/package/tests/files/demo.gif)
+![Demonstration](https://github.com/s4urp8n/package-template/raw/master/package/tests/files/demo.gif)
 
-## This is example of source code quality
+## This is example of coverage report
 
-_CODECLIMATE_HERE_ TODO: Code quality results here
+```
 
-## This is example of coverage
+Code Coverage Report:   
+  2016-07-30 18:33:11   
+                        
+ Summary:               
+  Classes: 100.00% (1/1)
+  Methods: 100.00% (2/2)
+  Lines:   100.00% (2/2)
 
-_COVERAGE_HERE_ TODO: Coverage results here
-
-## This is example of source documentation
-
-_API_HERE_ TODO: Documentation markdown here
+RemoveMe
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+```

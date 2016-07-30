@@ -34,6 +34,11 @@ namespace PackageTemplate
         
         $readme = $config['readme'];
         
+        $codeCoverage = file_get_contents('tests/_output/coverage.txt');
+        $codeCoverage = '```' . $codeCoverage . '```';
+        
+        $readme = mb_eregi_replace('{{COVERAGE_HERE}}', $codeCoverage, $readme);
+        
         file_put_contents('README.md', $readme, LOCK_EX);
         
         echo "\n";
@@ -151,6 +156,7 @@ namespace PackageTemplate
                 $files = new \RecursiveIteratorIterator(
                     $iterator, \RecursiveIteratorIterator::CHILD_FIRST
                 );
+                
                 foreach ($files as $file)
                 {
                     if ($file->isDir())

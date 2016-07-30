@@ -60,19 +60,11 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 
 ## Demostration
 
-![Demonstaration](https://github.com/s4urp8n/package-template/raw/master/package/tests/files/demo.gif)
+![Demonstration](https://github.com/s4urp8n/package-template/raw/master/package/tests/files/demo.gif)
 
-## This is example of source code quality
+## This is example of coverage report
 
-_CODECLIMATE_HERE_ TODO: Code quality results here
-
-## This is example of coverage
-
-_COVERAGE_HERE_ TODO: Coverage results here
-
-## This is example of source documentation
-
-_API_HERE_ TODO: Documentation markdown here
+{{COVERAGE_HERE}}
 
 README;
 
