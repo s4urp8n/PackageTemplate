@@ -106,5 +106,6 @@ if (PackageTemplate\isPagesExists())
 }
 
 echo 'Exit code: [' . $testResult . "]\n";
+PackageTemplate\updateGitignore();
 
 exit($testResult);

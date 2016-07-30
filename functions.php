@@ -3,6 +3,16 @@
 namespace PackageTemplate
 {
     
+    function updateGitignore()
+    {
+        /**
+         * Codeception tests/_output fix
+         */
+        $gitignore = preg_replace('/^tests[^\s]+\s*/im', '', file_get_contents('.gitignore'));
+        file_put_contents('.gitignore', $gitignore, LOCK_EX);
+        
+    }
+    
     function updateReadme($config)
     {
         echo "Updating README...";
