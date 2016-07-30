@@ -64,8 +64,8 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 
 ## IMPORTANT THINGS
 
-* edit README content in config.php
-* default webserver host is 127.0.0.1:4444
+* edit README content in **config.php**
+* default web server host is **127.0.0.1:4444**
 * **/package/tests** folder will copyed to **/tests/** after Codeception will bootstrapped, so keep in mind that paths in **_bootstrap.php** is relative to **/tests**  
 
 ## This is example of coverage report
