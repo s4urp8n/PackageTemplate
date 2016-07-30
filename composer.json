@@ -16,6 +16,7 @@
     }
   },
   "require": {
+    "zver/autoloader": "^1.0"
   },
   "require-dev": {
   }
