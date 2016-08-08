@@ -68,6 +68,10 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * default web server host is **127.0.0.1:4444**
 * **/package/tests** folder will copyed to **/tests/** after Codeception will bootstrapped, so keep in mind that paths in **_bootstrap.php** is relative to **/tests**  
 
+## This is example of documentation
+
+{{DOC_HERE}}
+
 ## This is example of coverage report
 
 {{COVERAGE_HERE}}
@@ -75,8 +79,7 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 README;
 
 return [
-    'server'               => "127.0.0.1:4444",
-    'packageName'          => "zver/package-template",
-    'codeceptionArguments' => '--skip functional --skip acceptance --coverage-xml --coverage-html --coverage-text --coverage',
-    'readme'               => $readme,
+    'server'      => "127.0.0.1:4444",
+    'packageName' => "zver/package-template",
+    'readme'      => $readme,
 ];

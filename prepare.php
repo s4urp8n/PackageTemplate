@@ -19,6 +19,7 @@ $commands = [
                 'codeception.yml',
                 'composer.lock',
                 'apigen.phar',
+                'phpDocumentor.phar',
                 'docs',
                 'c3.php',
             ];
@@ -46,6 +47,13 @@ $commands = [
         'callback'    => function () use ($config)
         {
             PackageTemplate\downloadFile('https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar');
+        },
+    ],
+    [
+        'description' => 'Downloading PhpDocumentor...',
+        'callback'    => function () use ($config)
+        {
+            PackageTemplate\downloadFile('http://phpdoc.org/phpDocumentor.phar');
         },
     ],
     [
