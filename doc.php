@@ -35,6 +35,57 @@ $commands = [
     [
         'command' => 'php apigen.phar generate --source package/src --destination docs/apigen',
     ],
+    [
+        'description' => 'Updating gh-pages...',
+        'callback'    => function ()
+        {
+            
+            $fetchURL = ArrayHelper::load(
+                StringHelper::load(shell_exec("git remote show origin"))
+                            ->toLinesArray()
+            )
+                                   ->map(
+                                       function ($key, $value)
+                                       {
+                                           return StringHelper::load($value)
+                                                              ->trimSpaces()
+                                                              ->toLowerCase()
+                                                              ->get();
+                                       }
+                                   )
+                                   ->filter(
+                                       function ($key, $value)
+                                       {
+                                           return StringHelper::load($value)
+                                                              ->isStartsWith('fetch url: ');
+                                       }
+                                   )
+                                   ->map(
+                                       function ($key, $value)
+                                       {
+                                           return StringHelper::load($value)
+                                                              ->substring(11)
+                                                              ->get();
+                                       }
+                                   )
+                                   ->getFirstValue();
+            
+            shell_exec('git clone "' . $fetchURL . '" docs/gh-pages');
+            
+            $currentDir = getcwd();
+            
+            chdir('docs/gh-pages');
+            
+            shell_exec('git checkout -b gh-pages');
+            
+            PackageTemplate\removePath(__DIR__);
+            
+            print_r(scandir(__DIR__));
+            
+            chdir($currentDir);
+            
+        },
+    ],
     //[
     //    'command' => 'php phpDocumentor.phar -d package/src -t docs/phpdoc --template="xml" --template="responsive-twig"',
     //],
