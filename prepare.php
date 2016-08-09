@@ -16,6 +16,7 @@ $commands = [
                 'vendor',
                 'tests',
                 'codecept.phar',
+                'phpdox.phar',
                 'codeception.yml',
                 'composer.lock',
                 'apigen.phar',
@@ -49,13 +50,22 @@ $commands = [
             PackageTemplate\downloadFile('https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar');
         },
     ],
-    [
-        'description' => 'Downloading PhpDocumentor...',
-        'callback'    => function () use ($config)
-        {
-            PackageTemplate\downloadFile('http://phpdoc.org/phpDocumentor.phar');
-        },
-    ],
+    //[
+    //    'description' => 'Downloading PhpDocumentor...',
+    //    'callback'    => function () use ($config)
+    //    {
+    //        PackageTemplate\downloadFile('http://phpdoc.org/phpDocumentor.phar');
+    //    },
+    //],
+    //[
+    //    'description' => 'Downloading PhpDox...',
+    //    'callback'    => function () use ($config)
+    //    {
+    //        PackageTemplate\downloadFile(
+    //            'https://github.com/theseer/phpdox/releases/download/0.8.1.1/phpdox-0.8.1.1.phar', 'phpdox.phar'
+    //        );
+    //    },
+    //],
     [
         'description' => 'Downloading Codeception...',
         'callback'    => function () use ($config)

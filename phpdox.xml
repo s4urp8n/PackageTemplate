@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdox xmlns="http://xml.phpdox.net/config">
+    <project name="Package template" source="${basedir}/package/src" workdir="${basedir}/docs/phpdox/">
+        <collector backend="parser"/>
+        <generator output="${basedir}/docs/phpdox">
+            <build engine="html" output="html"/>
+        </generator>
+    </project>
+</phpdox>

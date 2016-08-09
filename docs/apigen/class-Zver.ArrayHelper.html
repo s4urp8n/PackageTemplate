@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Zver\ArrayHelper</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Zver.html">
+						Zver<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Zver.Exceptions.html">
+						Exceptions<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Zver.Exceptions.ArrayHelper.html">
+						ArrayHelper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Zver.Exceptions.Page.html">
+						Page					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Zver.Exceptions.Pagination.html">
+						Pagination					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Zver.Exceptions.View.html">
+						View					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Zver.ArrayHelper.html">ArrayHelper</a></li>
+				<li><a href="class-Zver.Finder.html">Finder</a></li>
+				<li><a href="class-Zver.Page.html">Page</a></li>
+				<li><a href="class-Zver.Pagination.html">Pagination</a></li>
+				<li><a href="class-Zver.View.html">View</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Zver.PaginationInterface.html">PaginationInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Zver.html" title="Summary of Zver"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ArrayHelper</h1>
+
+
+	<div class="description">
+	<p>To help you manipulate with arrays</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Zver\ArrayHelper</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>IteratorAggregate</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Zver.html">Zver</a><br>
+		<b>Package:</b> Zver<br>
+
+			<b>Located at</b> <a href="source-class-Zver.ArrayHelper.html#10-994" title="Go to source code">src/array-helper-master/src/Zver/ArrayHelper.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="range" id="_range">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_range">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#35-63" title="Go to source code">range</a>( <span> <var>$min</var></span>, <span> <var>$max</var></span>, <span>integer <var>$step</var> = <span class="php-num">1</span></span> )</code>
+
+		<div class="description short">
+			<p>Get instance of class with loaded array of range values</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get instance of class with loaded array of range values</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$min</var></dt>
+					<dd></dd>
+					<dt><var>$max</var></dt>
+					<dd></dd>
+					<dt><var>$step</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+				<h4>Example</h4>
+				<div class="list">
+						<pre><span class="xlang">&lt;?php</span>
+
+<span class="php-var">$to10</span>=Arr::<span class="php-keyword2">range</span>(<span class="php-num">0</span>,<span class="php-num">10</span>);
+
+<span class="php-comment">//$to10 contains array [0,1,2,3,4,5,6,7,8,9,10]</span>
+
+<span class="php-var">$to10step2</span>=Arr::<span class="php-keyword2">range</span>(<span class="php-num">0</span>,<span class="php-num">10</span>,<span class="php-num">2</span>);
+
+<span class="php-comment">//$to10step2 contains array [0,2,4,6,8,10]</span>
+
+<span class="xlang">?&gt;</span></pre><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="load" id="_load">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#65-83" title="Go to source code">load</a>( <span>array <var>$array</var> = []</span> )</code>
+
+		<div class="description short">
+			<p>Get instance of ArrayHelper class and load array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get instance of ArrayHelper class and load array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+				<h4>Example</h4>
+				<div class="list">
+						<pre><span class="xlang">&lt;?php</span>
+<span class="php-var">$arr</span>=Arr::load([<span class="php-num">1</span>,<span class="php-num">2</span>,<span class="php-num">3</span>]);
+<span class="xlang">?&gt;</span></pre><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="explode" id="_explode">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_explode">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#85-97" title="Go to source code">explode</a>( <span>string <var>$delimeter</var></span>, <span>string <var>$string</var></span>, <span>null <var>$limit</var>,…</span> )</code>
+
+		<div class="description short">
+			<p>Get instance of ArrayHelper class with exploded string loaded</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get instance of ArrayHelper class with exploded string loaded</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$delimeter</var></dt>
+					<dd></dd>
+					<dt><var>$string</var></dt>
+					<dd></dd>
+					<dt><var>$limit</var>,…</dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="combine" id="_combine">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_combine">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#99-153" title="Go to source code">combine</a>( <span>array <var>$keys</var></span>, <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			<p>Combined two array, keys and values by common associative key</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Combined two array, keys and values by common associative key</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$keys</var></dt>
+					<dd></dd>
+					<dt><var>$values</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+				<h4>Example</h4>
+				<div class="list">
+						<p>Keys = Array
+(
+     [1] => XL
+     [2] => L
+     [3] => S
+     [4] => M
+     [6] => XS
+)</p>
+
+<p>Values = Array
+(
+     [1] => 1200
+     [2] => 700
+     [3] => 670
+     [4] => 450
+     [6] => 300
+     [7] =>
+)</p>
+
+<p>Combined = Array
+(
+     [XL] => 1200
+     [L] => 700
+     [S] => 670
+     [M] => 450
+     [XS] => 300
+)</p><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClone" id="_getClone">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClone">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#155-177" title="Go to source code">getClone</a>( )</code>
+
+		<div class="description short">
+			<p>Get clone of instance</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get clone of instance</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+				<h4>Example</h4>
+				<div class="list">
+						<pre><span class="xlang">&lt;?php</span>
+
+<span class="php-var">$array</span>=Arr::load([<span class="php-num">1</span>,<span class="php-num">2</span>,<span class="php-num">3</span>]);
+
+<span class="php-var">$clone</span>=<span class="php-var">$array</span>-&gt;getClone();
+
+<span class="php-comment">//$clone and $array - two indentical instances of ArrayHelper class</span>
+
+<span class="xlang">?&gt;</span></pre><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="join" id="_join">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_join">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#179-191" title="Go to source code">join</a>( <span>string <var>$glue</var> = <span class="php-quote">''</span></span>, <span> <var>$maxDepth</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Alias for implode()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for implode()</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$glue</var></dt>
+					<dd></dd>
+					<dt><var>$maxDepth</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Zver.ArrayHelper.html#_implode">Zver\ArrayHelper::implode()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="implode" id="_implode">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_implode">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#193-236" title="Go to source code">implode</a>( <span>string <var>$glue</var> = <span class="php-quote">''</span></span>, <span> <var>$maxDepth</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Concatenates all elements in array recursively in one string.
+$glue will placed between elements</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Concatenates all elements in array recursively in one string.
+$glue will placed between elements</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$glue</var></dt>
+					<dd>String between elements</dd>
+					<dt><var>$maxDepth</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Example</h4>
+				<div class="list">
+						<pre><span class="xlang">&lt;?php</span>
+
+<span class="php-var">$imploded</span>=Arr::load(<span class="php-num">1</span>,<span class="php-num">2</span>,<span class="php-num">3</span>,<span class="php-num">4</span>,[<span class="php-num">5</span>,<span class="php-num">6</span>])-&gt;<span class="php-keyword2">implode</span>();
+
+<span class="php-comment">//$imploded='123456'</span>
+
+<span class="php-var">$imploded</span>=Arr::load(<span class="php-num">1</span>,<span class="php-num">2</span>,<span class="php-num">3</span>,<span class="php-num">4</span>,[<span class="php-num">5</span>,<span class="php-num">6</span>])-&gt;<span class="php-keyword2">implode</span>(<span class="php-quote">'--'</span>);
+
+<span class="php-comment">//$imploded='1--2--3--4--5--6'</span>
+
+<span class="xlang">?&gt;</span></pre><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="walk" id="_walk">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_walk">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#238-264" title="Go to source code">walk</a>( <span>callable <var>$callback</var></span>, <span> <var>$path</var> = []</span>, <span> <var>$that</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Run callback function with every element of loaded array as an argument recursively</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Run callback function with every element of loaded array as an argument recursively</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd></dd>
+					<dt><var>$path</var></dt>
+					<dd></dd>
+					<dt><var>$that</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="replaceArray" id="_replaceArray">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_replaceArray">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#266-278" title="Go to source code">replaceArray</a>( <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			<p>Alias for set()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for set()</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Zver.ArrayHelper.html#_set">Zver\ArrayHelper::set()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set" id="_set">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#280-302" title="Go to source code">set</a>( <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			<p>Replace loaded array with $array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Replace loaded array with $array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+				<h4>Example</h4>
+				<div class="list">
+						<pre><span class="xlang">&lt;?php</span>
+<span class="php-var">$arr</span>=Arr::load([<span class="php-num">1</span>,<span class="php-num">2</span>,<span class="php-num">3</span>]);
+<span class="php-var">$arr</span>-&gt;set([<span class="php-num">2</span>,<span class="php-num">3</span>]);
+
+<span class="xlang">?&gt;</span></pre><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="reverse" id="_reverse">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reverse">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#304-313" title="Go to source code">reverse</a>( )</code>
+
+		<div class="description short">
+			<p>Reverse order of loaded array keys and values</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Reverse order of loaded array keys and values</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="reverseValues" id="_reverseValues">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reverseValues">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#315-335" title="Go to source code">reverseValues</a>( )</code>
+
+		<div class="description short">
+			<p>Reverse order of loaded array values</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Reverse order of loaded array values</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="reverseKeys" id="_reverseKeys">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reverseKeys">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#337-357" title="Go to source code">reverseKeys</a>( )</code>
+
+		<div class="description short">
+			<p>Reverse order of loaded array keys</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Reverse order of loaded array keys</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getKeys" id="_getKeys">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getKeys">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#359-367" title="Go to source code">getKeys</a>( )</code>
+
+		<div class="description short">
+			<p>Return indexed array of keys of loaded array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return indexed array of keys of loaded array</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getValues" id="_getValues">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getValues">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#369-377" title="Go to source code">getValues</a>( )</code>
+
+		<div class="description short">
+			<p>Return indexed array of values of loaded array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return indexed array of values of loaded array</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLastValueUnset" id="_getLastValueUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLastValueUnset">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#379-396" title="Go to source code">getLastValueUnset</a>( )</code>
+
+		<div class="description short">
+			<p>Return last value from array and removes it from array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return last value from array and removes it from array</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Zver.Exceptions.ArrayHelper.EmptyArrayException.html">Zver\Exceptions\ArrayHelper\EmptyArrayException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEmpty" id="_isEmpty">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEmpty">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#398-406" title="Go to source code">isEmpty</a>( )</code>
+
+		<div class="description short">
+			<p>Returns true if loaded array have no elements, false otherwise</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns true if loaded array have no elements, false otherwise</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLastValue" id="_getLastValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLastValue">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#408-425" title="Go to source code">getLastValue</a>( )</code>
+
+		<div class="description short">
+			<p>Get last value of array
+If called on empty array - exception will be thrown</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get last value of array
+If called on empty array - exception will be thrown</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLastKey" id="_getLastKey">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLastKey">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#427-442" title="Go to source code">getLastKey</a>( )</code>
+
+		<div class="description short">
+			<p>Get last key of array
+If called on empty array - exception will be thrown</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get last key of array
+If called on empty array - exception will be thrown</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFirstValueUnset" id="_getFirstValueUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFirstValueUnset">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#444-461" title="Go to source code">getFirstValueUnset</a>( )</code>
+
+		<div class="description short">
+			<p>Return first value of array and removes it from array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return first value of array and removes it from array</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Zver.Exceptions.ArrayHelper.EmptyArrayException.html">Zver\Exceptions\ArrayHelper\EmptyArrayException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFirstValue" id="_getFirstValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFirstValue">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#463-480" title="Go to source code">getFirstValue</a>( )</code>
+
+		<div class="description short">
+			<p>Get first value of array
+If called on empty array - exception will be thrown</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get first value of array
+If called on empty array - exception will be thrown</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFirstKey" id="_getFirstKey">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFirstKey">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#482-498" title="Go to source code">getFirstKey</a>( )</code>
+
+		<div class="description short">
+			<p>Get first key of array
+If called on empty array - exception will be thrown</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get first key of array
+If called on empty array - exception will be thrown</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="flip" id="_flip">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_flip">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#500-511" title="Go to source code">flip</a>( )</code>
+
+		<div class="description short">
+			<p>Flip array - keys will be values, values will be keys
+Swap keys and values</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Flip array - keys will be values, values will be keys
+Swap keys and values</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getArray" id="_getArray">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getArray">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#513-522" title="Go to source code">getArray</a>( )</code>
+
+		<div class="description short">
+			<p>Alias for get()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for get()</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Zver.ArrayHelper.html#_get">Zver\ArrayHelper::get()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setArray" id="_setArray">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setArray">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#524-536" title="Go to source code">setArray</a>( <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			<p>Alias for set()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for set()</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Zver.ArrayHelper.html#_set">Zver\ArrayHelper::set()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#538-546" title="Go to source code">get</a>( )</code>
+
+		<div class="description short">
+			<p>Return loaded array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return loaded array</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLength" id="_getLength">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLength">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#548-557" title="Go to source code">getLength</a>( )</code>
+
+		<div class="description short">
+			<p>Alias for count()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for count()</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Zver.ArrayHelper.html#_count">Zver\ArrayHelper::count()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="count" id="_count">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_count">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#559-567" title="Go to source code">count</a>( )</code>
+
+		<div class="description short">
+			<p>Get count of elements in loaded array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get count of elements in loaded array</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="length" id="_length">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_length">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#569-578" title="Go to source code">length</a>( )</code>
+
+		<div class="description short">
+			<p>Alias for count()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for count()</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Zver.ArrayHelper.html#_count">Zver\ArrayHelper::count()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCount" id="_getCount">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCount">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#580-589" title="Go to source code">getCount</a>( )</code>
+
+		<div class="description short">
+			<p>Alias for count()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for count()</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Zver.ArrayHelper.html#_count">Zver\ArrayHelper::count()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAt" id="_getAt">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAt">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#591-617" title="Go to source code">getAt</a>( <span>integer <var>$index</var></span>, <span>null <var>$default</var>,…</span> )</code>
+
+		<div class="description short">
+			<p>Get value at $index
+Also works fine at associative arrays</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get value at $index
+Also works fine at associative arrays</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$index</var></dt>
+					<dd></dd>
+					<dt><var>$default</var>,…</dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed|null
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isKeyExists" id="_isKeyExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isKeyExists">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#619-661" title="Go to source code">isKeyExists</a>( <span> <var>$key</var></span>, <span> <var>$strict</var> = <span class="php-keyword1">true</span></span>, <span> <var>$maxDepth</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Return array of paths (array of keys) to element of array which key is equals to $key, false otherwise
+Searching processed all elements recursively
+If $strict is true it compares in strict mode === instead of ==</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return array of paths (array of keys) to element of array which key is equals to $key, false otherwise
+Searching processed all elements recursively
+If $strict is true it compares in strict mode === instead of ==</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$strict</var></dt>
+					<dd></dd>
+					<dt><var>$maxDepth</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isValueExists" id="_isValueExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isValueExists">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#663-706" title="Go to source code">isValueExists</a>( <span> <var>$value</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span>, <span> <var>$maxDepth</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Return array of paths (array of keys) to element of array which value is equals to $value, false otherwise
+Searching processed all elements recursively
+If $strict is true it compares in strict mode === instead of ==</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return array of paths (array of keys) to element of array which value is equals to $value, false otherwise
+Searching processed all elements recursively
+If $strict is true it compares in strict mode === instead of ==</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+					<dt><var>$strict</var></dt>
+					<dd></dd>
+					<dt><var>$maxDepth</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="convertToIndexed" id="_convertToIndexed">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_convertToIndexed">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#708-733" title="Go to source code">convertToIndexed</a>( <span>integer <var>$startIndex</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Replaced all keys in single-demension array with indexes starting from $startIndex</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Replaced all keys in single-demension array with indexes starting from $startIndex</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$startIndex</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="splitParts" id="_splitParts">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_splitParts">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#735-760" title="Go to source code">splitParts</a>( <span> <var>$numberOfParts</var></span> )</code>
+
+		<div class="description short">
+			<p>Split array to $numberOfParts parts</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Split array to $numberOfParts parts</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$numberOfParts</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getIterator" id="_getIterator">
+
+		<td class="attributes"><code>
+			 public 
+
+			ArrayIterator
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIterator">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#762-770" title="Go to source code">getIterator</a>( )</code>
+
+		<div class="description short">
+			<p>Implementation of IteratorAggregade</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Implementation of IteratorAggregade</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					ArrayIterator
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>IteratorAggregate::getIterator()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#772-782" title="Go to source code">offsetExists</a>( <span>mixed <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Implementation of ArrayAccess</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Implementation of ArrayAccess</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#784-796" title="Go to source code">offsetGet</a>( <span>mixed <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd>Implementation of ArrayAccess</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed|null
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#798-814" title="Go to source code">offsetSet</a>( <span>mixed <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Implementation of ArrayAccess</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Implementation of ArrayAccess</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#816-824" title="Go to source code">offsetUnset</a>( <span>mixed <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Implementation of ArrayAccess</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Implementation of ArrayAccess</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="map" id="_map">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_map">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#826-843" title="Go to source code">map</a>( <span> <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			<p>Apply callback to every element of loaded array.
+Keys preserved.
+No recursion.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Apply callback to every element of loaded array.
+Keys preserved.
+No recursion.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="filter" id="_filter">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_filter">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#845-865" title="Go to source code">filter</a>( <span> <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			<p>Apply callback to every element of loaded array, if callback returns false - element with key will be unset.
+Keys preserved.
+No recursion.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Apply callback to every element of loaded array, if callback returns false - element with key will be unset.
+Keys preserved.
+No recursion.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="column" id="_column">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_column">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#867-895" title="Go to source code">column</a>( <span>string <var>$column</var></span> )</code>
+
+		<div class="description short">
+			<p>Get only one key column from multi-dimensional array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get only one key column from multi-dimensional array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$column</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insertFirst" id="_insertFirst">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insertFirst">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#897-907" title="Go to source code">insertFirst</a>( <span> <var>$element</var></span> )</code>
+
+		<div class="description short">
+			<p>Insert element into beginning of array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Insert element into beginning of array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Zver.ArrayHelper.html">Zver\ArrayHelper</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insertLast" id="_insertLast">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insertLast">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#909-921" title="Go to source code">insertLast</a>( <span> <var>$element</var></span> )</code>
+
+		<div class="description short">
+			<p>Insert element into end of array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Insert element into end of array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="slice" id="_slice">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_slice">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#923-936" title="Go to source code">slice</a>( <span> <var>$offset</var></span>, <span> <var>$length</var></span> )</code>
+
+		<div class="description short">
+			<p>Get $length number of elements started from $offset</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get $length number of elements started from $offset</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd></dd>
+					<dt><var>$length</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sliceFromCenter" id="_sliceFromCenter">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sliceFromCenter">#</a>
+		<code><a href="source-class-Zver.ArrayHelper.html#938-993" title="Go to source code">sliceFromCenter</a>( <span> <var>$centerIndex</var></span>, <span> <var>$itemsPerSide</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="array" id="$array">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Zver.ArrayHelper.html#18-23" title="Go to source code"><var>$array</var></a>
+
+			<div class="description short">
+				<p>Protected variable to store loaded array</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Protected variable to store loaded array</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$array" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

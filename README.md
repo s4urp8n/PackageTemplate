@@ -63,13 +63,13 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 
 ```
 
-Code Coverage Report:   
-  2016-08-08 16:33:18   
-                        
- Summary:               
-  Classes: 100.00% (1/1)
-  Methods: 100.00% (2/2)
-  Lines:   100.00% (2/2)
+Code Coverage Report:    
+  2016-08-09 21:51:21    
+                         
+ Summary:                
+  Classes: 57.14% (8/14) 
+  Methods:  1.90% (2/105)
+  Lines:    0.26% (2/769)
 
 RemoveMe
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
