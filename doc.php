@@ -68,6 +68,7 @@ $commands = [
             
             chdir($currentDir);
             PackageTemplate\forceRmdir('docs');
+            PackageTemplate\forceUnlink('.git/index.lock');
             
         },
     ],

@@ -83,9 +83,6 @@ namespace PackageTemplate
     {
         $origin = getGitOrigin();
         
-        echo 'Origin=' . $origin . "\n";
-        
-        die();
         echo "Updating README...";
         chdir(__DIR__);
         
