@@ -45,7 +45,7 @@ namespace PackageTemplate
         
         $url = "https://" . $user . '.github.io/' . $repo . '/index.html';
         
-        return $url;
+        return '[Documentation](' . $url . ')';
     }
     
     function getGitOrigin()

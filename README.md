@@ -55,21 +55,21 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 * default web server host is **127.0.0.1:4444**
 * **/package/tests** folder will copyed to **/tests/** after Codeception will bootstrapped, so keep in mind that paths in **_bootstrap.php** is relative to **/tests**  
 
-## This is example of documentation
+## This is example of documentation generated using Apigen and pushed into **gh-pages** branch
 
-{{DOC_HERE}}
+[Documentation](https://s4urp8n.github.io/package-template/index.html)
 
 ## This is example of coverage report
 
 ```
 
-Code Coverage Report:    
-  2016-08-09 23:52:38    
-                         
- Summary:                
-  Classes: 57.14% (8/14) 
-  Methods:  1.90% (2/105)
-  Lines:    0.26% (2/769)
+Code Coverage Report:   
+  2016-08-10 01:36:18   
+                        
+ Summary:               
+  Classes: 100.00% (2/2)
+  Methods: 100.00% (2/2)
+  Lines:   50.00% (2/4) 
 
 RemoveMe
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)

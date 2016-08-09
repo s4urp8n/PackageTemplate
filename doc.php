@@ -7,14 +7,12 @@ include 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 //Load configuration
 $config = include 'config.php';
 
+if (!file_exists('tests/_output/coverage.txt'))
+{
+    die('You must run tests before documentation generation');
+}
+
 $commands = [
-    [
-        'description' => 'Testing before update documentation',
-        'callback'    => function () use ($config)
-        {
-            echo shell_exec('php test.php');
-        },
-    ],
     [
         'description' => 'Package documenting started...',
     ],
