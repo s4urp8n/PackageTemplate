@@ -64,7 +64,7 @@ Use this package to create auto-tested, auto-integrated and auto-documented pack
 ```
 
 Code Coverage Report:    
-  2016-08-09 21:51:21    
+  2016-08-09 23:52:38    
                          
  Summary:                
   Classes: 57.14% (8/14) 

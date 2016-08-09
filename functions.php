@@ -3,6 +3,7 @@
 namespace PackageTemplate
 {
     
+    use Zver\ArrayHelper;
     use Zver\StringHelper;
     
     function updateGitignore()
@@ -27,8 +28,64 @@ namespace PackageTemplate
                            ->get();
     }
     
+    function getDocIndexUrl()
+    {
+        $origin = StringHelper::load(getGitOrigin());
+        
+        $repo = $origin->getClone()
+                       ->getLastPart('/')
+                       ->getFirstPart('.')
+                       ->get();
+        
+        $user = $origin->getClone()
+                       ->getParts(3, '/', '')
+                       ->get();
+        
+        $url = "https://" . $user . '.github.io/' . $repo . '/index.html';
+        
+        return $url;
+    }
+    
+    function getGitOrigin()
+    {
+        return ArrayHelper::load(
+            StringHelper::load(shell_exec("git remote show origin"))
+                        ->toLinesArray()
+        )
+                          ->map(
+                              function ($key, $value)
+                              {
+                                  return StringHelper::load($value)
+                                                     ->trimSpaces()
+                                                     ->toLowerCase()
+                                                     ->get();
+                              }
+                          )
+                          ->filter(
+                              function ($key, $value)
+                              {
+                                  return StringHelper::load($value)
+                                                     ->isStartsWith('fetch url: ');
+                              }
+                          )
+                          ->map(
+                              function ($key, $value)
+                              {
+                                  return StringHelper::load($value)
+                                                     ->substring(11)
+                                                     ->get();
+                              }
+                          )
+                          ->getFirstValue();
+    }
+    
     function updateReadme($config)
     {
+        $origin = getGitOrigin();
+        
+        echo 'Origin=' . $origin . "\n";
+        
+        die();
         echo "Updating README...";
         chdir(__DIR__);
         
@@ -38,6 +95,7 @@ namespace PackageTemplate
         $codeCoverage = '```' . $codeCoverage . '```';
         
         $readme = mb_eregi_replace('{{COVERAGE_HERE}}', $codeCoverage, $readme);
+        $readme = mb_eregi_replace('{{DOC_URL_HERE}}', getDocIndexUrl(), $readme);
         
         file_put_contents('README.md', $readme, LOCK_EX);
         
@@ -64,6 +122,20 @@ namespace PackageTemplate
         return stripos(php_uname('s'), 'win') > -1
             ? exec("taskkill /F /T /PID $pid")
             : exec("kill -9 $pid");
+    }
+    
+    function forceUnlink($path)
+    {
+        return stripos(php_uname('s'), 'win') > -1
+            ? exec('del /F /Q "' . $path . '"')
+            : exec('rm -f "' . $path . '"');
+    }
+    
+    function forceRmdir($path)
+    {
+        return stripos(php_uname('s'), 'win') > -1
+            ? exec('rmdir /S /Q "' . $path . '"')
+            : exec('rm -rf "' . $path . '"');
     }
     
     function copyDirectory($src, $dst)
@@ -146,7 +218,7 @@ namespace PackageTemplate
             {
                 if (is_null($callback) || (is_callable($callback) && $callback($path) === true))
                 {
-                    @unlink($path);
+                    forceUnlink($path);
                 }
             }
             else
@@ -163,20 +235,20 @@ namespace PackageTemplate
                     {
                         if (is_null($callback) || (is_callable($callback) && $callback($file->getRealPath()) === true))
                         {
-                            @rmdir($file->getRealPath());
+                            forceRmdir($file->getRealPath());
                         }
                     }
                     else
                     {
                         if (is_null($callback) || (is_callable($callback) && $callback($file->getRealPath()) === true))
                         {
-                            @unlink($file->getRealPath());
+                            forceUnlink($file->getRealPath());
                         }
                     }
                 }
                 if (is_null($callback) || (is_callable($callback) && $callback($path) === true))
                 {
-                    @rmdir($path);
+                    forceRmdir($path);
                 }
             }
             
