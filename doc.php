@@ -25,6 +25,7 @@ $commands = [
     [
         'callback' => function () use ($config)
         {
+            
             $removes = [
                 'docs',
             ];
