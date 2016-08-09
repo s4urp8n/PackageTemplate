@@ -30,6 +30,7 @@ $commands = [
                 PackageTemplate\removePath($remove);
             }
             
+            PackageTemplate\forceUnlink('.git/index.lock');
         },
     ],
 ];

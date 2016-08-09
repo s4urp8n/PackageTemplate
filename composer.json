@@ -16,7 +16,9 @@
     }
   },
   "require": {
-    "zver/autoloader": "^1.0"
+    "zver/autoloader": "^1.0",
+    "zver/string-helper": "^1.0",
+    "zver/array-helper": "^1.0"
   },
   "require-dev": {
   }
