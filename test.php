@@ -105,7 +105,17 @@ if (PackageTemplate\isPagesExists())
     PackageTemplate\kill($pid);
 }
 
-echo 'Exit code: [' . $testResult . "]\n";
+echo 'Exit code: [' . $testResult . "] ";
+
+if ($testResult == 0)
+{
+    echo "- All tests PASSED\n";
+}
+else
+{
+    echo "- Some tests FAIL\n";
+}
+
 PackageTemplate\updateGitignore();
 
 exit($testResult);

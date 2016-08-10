@@ -194,7 +194,7 @@ namespace PackageTemplate
             
             if (!empty($commands[$i]['command']))
             {
-                echo passthru($commands[$i]['command']) . "\n\n";
+                echo exec($commands[$i]['command']) . "\n\n";
             }
             
             if (!empty($commands[$i]['callback']))

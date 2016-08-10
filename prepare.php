@@ -37,12 +37,8 @@ $commands = [
         'command'     => 'composer self-update',
     ],
     [
-        'description' => 'Composer clear cache...',
-        'command'     => 'composer clear-cache',
-    ],
-    [
         'description' => 'Run Composer install...',
-        'command'     => 'composer install',
+        'command'     => 'composer install --no-progress',
     ],
     [
         'description' => 'Downloading Apigen...',
