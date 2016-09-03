@@ -6,7 +6,8 @@ php:
   - 7
 
 before_script:
-  - phpunit --self-upgrade
+  - composer install
+  - wget https://phar.phpunit.de/phpunit.phar
 
 script:
-  - phpunit ./
+  - phpunit.phar ./

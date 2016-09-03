@@ -8,6 +8,9 @@ class ModifyMe2Test extends PHPUnit\Framework\TestCase
         $srcDirectory =
             realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'src') . DIRECTORY_SEPARATOR;
         
+        $composerDirectory =
+            realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor') . DIRECTORY_SEPARATOR;
+        
         //PSR4 autoloader
         spl_autoload_register(
             function ($className) use ($srcDirectory)
@@ -42,6 +45,13 @@ class ModifyMe2Test extends PHPUnit\Framework\TestCase
                 include_once($currentFile);
             }
         }
+        
+        $currentFile = $composerDirectory . 'autoload.php';
+        if (file_exists($currentFile))
+        {
+            include_once($currentFile);
+        }
+        
     }
     
     public static function setUpBeforeClass()
