@@ -5,8 +5,5 @@ php:
   - 5.6
   - 7
 
-before_script:
-  - php prepare.php
-
 script:
-  - php test.php
+  - phpunit ./
