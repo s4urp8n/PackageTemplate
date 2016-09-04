@@ -8,7 +8,10 @@
   "autoload": {
     "psr-4": {
       "": "src/"
-    }
+    },
+    "files": [
+      "src/Functions.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
