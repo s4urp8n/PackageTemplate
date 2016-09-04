@@ -1,5 +1,8 @@
 <?php
-function removeMeFunction($arg1, $arg2)
+if (function_exists('removeMeFunction'))
 {
-    return 1;
+    function removeMeFunction($arg1, $arg2)
+    {
+        return 1;
+    }
 }
