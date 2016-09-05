@@ -1,13 +1,13 @@
 <?php
 
 $srcDirectory = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'src') . DIRECTORY_SEPARATOR;
-
+$classesDirectory = realpath(__DIR__ . DIRECTORY_SEPARATOR . 'classes') . DIRECTORY_SEPARATOR;
 $composerDirectory =
     realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor') . DIRECTORY_SEPARATOR;
 
 //PSR4 autoloader
 spl_autoload_register(
-    function ($className) use ($srcDirectory)
+    function ($className) use ($srcDirectory, $classesDirectory)
     {
         
         $className = mb_eregi_replace('[\\\/]+', DIRECTORY_SEPARATOR, $className);
@@ -18,6 +18,11 @@ spl_autoload_register(
         if (file_exists($srcDirectory . $className))
         {
             include_once($srcDirectory . $className);
+        }
+        
+        if (file_exists($classesDirectory . $className))
+        {
+            include_once($classesDirectory . $className);
         }
         
     }, false
