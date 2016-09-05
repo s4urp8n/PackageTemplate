@@ -25,27 +25,19 @@ spl_autoload_register(
             include_once($classesDirectory . $className);
         }
         
-    }, false
+    }, false, false
 );
 
-//Functions file autoload if exists
-$aliases = [
-    'Functions',
-];
-
-$currentFile = '';
-foreach ($aliases as $alias)
+//Functions file
+$functionsFile = $srcDirectory . 'Functions.php';
+if (file_exists($functionsFile))
 {
-    $currentFile = $srcDirectory . $alias . '.php';
-    if (file_exists($currentFile))
-    {
-        include_once($currentFile);
-    }
+    include_once($functionsFile);
 }
 
 //Composer autoload
-$currentFile = $composerDirectory . 'autoload.php';
-if (file_exists($currentFile))
+$composerFile = $composerDirectory . 'autoload.php';
+if (file_exists($composerFile))
 {
-    include_once($currentFile);
+    include_once($composerFile);
 }

@@ -17,6 +17,7 @@ class ModifyMe2Test extends PHPUnit\Framework\TestCase
     {
         $this->assertSame(ModifyMe::method1(), 1);
         $this->assertSame(ModifyMe3::method1(), 1);
+        
     }
     
     public function testMethod2()
