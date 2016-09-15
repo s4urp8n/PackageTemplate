@@ -26,4 +26,15 @@ class ModifyMe2Test extends PHPUnit\Framework\TestCase
         $this->assertSame(ModifyMe3::method2(), 2);
     }
     
+    public function testPackageFile()
+    {
+        $this->assertSame(
+            file_get_contents(packageFile('.gitkeep')), "Save files for your packages in this folder"
+        );
+        
+        $this->assertSame(
+            file_get_contents(packageTestFile('.gitkeep')), "Save files for your tests in this folder"
+        );
+    }
+    
 }

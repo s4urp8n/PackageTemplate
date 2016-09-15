@@ -41,3 +41,33 @@ if (file_exists($composerFile))
 {
     include_once($composerFile);
 }
+
+if (!function_exists('packageFile'))
+{
+    /**
+     * @param $name Name of file in files folder
+     *
+     * @return string Full filename of package file
+     */
+    function packageFile($name)
+    {
+        return realpath(
+            __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . $name
+        );
+    }
+}
+
+if (!function_exists('packageTestFile'))
+{
+    /**
+     * @param $name Name of file in files folder
+     *
+     * @return string Full filename of package test file
+     */
+    function packageTestFile($name)
+    {
+        return realpath(
+            __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . $name
+        );
+    }
+}
