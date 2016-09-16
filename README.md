@@ -19,6 +19,8 @@ Use this template package structure to build your own packages and tests
 
 ## Run tests
 
+For testing PHPUnit installed required
+
 ```
 cd package-template
 phpunit ./
