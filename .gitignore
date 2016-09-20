@@ -13,6 +13,7 @@
 /codeception.yml
 /c3.php
 /composer.lock
+/coverage
 /phpDocumentor.phar
 /apigen.phar
 /phpdox.phar
