@@ -3,6 +3,8 @@
 class ModifyMe2Test extends PHPUnit\Framework\TestCase
 {
     
+    use Package\Test;
+    
     public static function setUpBeforeClass()
     {
         

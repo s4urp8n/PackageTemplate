@@ -3,6 +3,8 @@
 class ModifyMeTest extends PHPUnit\Framework\TestCase
 {
     
+    use Package\Test;
+    
     public static function setUpBeforeClass()
     {
         
@@ -15,17 +17,25 @@ class ModifyMeTest extends PHPUnit\Framework\TestCase
     
     public function testMethod1()
     {
-        $this->assertSame(ModifyMe::method1(), 1);
-        $this->assertSame(ModifyMe3::method1(), 1);
-        $this->assertSame(removeMeFunction(), 1);
-        $this->assertSame(\Sub\SubModifyMe::method1(), 1);
+        $this->foreachSame(
+            [
+                [ModifyMe::method1(), 1],
+                [ModifyMe3::method1(), 1],
+                [removeMeFunction(), 1],
+                [\Sub\SubModifyMe::method1(), 1],
+            ]
+        );
     }
     
     public function testMethod2()
     {
-        $this->assertSame(ModifyMe::method2(), 2);
-        $this->assertSame(ModifyMe3::method2(), 2);
-        $this->assertSame(\Sub\SubModifyMe::method2(), 2);
+        $this->foreachSame(
+            [
+                [ModifyMe::method2(), 2],
+                [ModifyMe3::method2(), 2],
+                [\Sub\SubModifyMe::method2(), 2],
+            ]
+        );
     }
     
 }
