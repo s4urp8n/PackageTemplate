@@ -24,6 +24,6 @@ For testing PHPUnit installed required
 ```
 cd package-template
 composer install
-phpunit ./tests
+phpunit
 ```
 

@@ -1,19 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.5/phpunit.xsd"
-        colors="true"
-        bootstrap="tests/bootstrap.php"
->
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        colors="false"
+        processIsolation="true"
+        stopOnFailure="true"
+        syntaxCheck="false"
+        backupGlobals="false"
+        bootstrap="tests/bootstrap.php">
+    <testsuites>
+        <testsuite name="testsuite">
+            <directory suffix=".php">tests</directory>
+        </testsuite>
+    </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
-    <testsuites>
-        <testsuite name="My Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
     <logging>
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
     </logging>
