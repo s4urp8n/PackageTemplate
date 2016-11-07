@@ -16,7 +16,7 @@ Use this template package structure to build your own packages and tests
 
 * packageFile($name) - get full name of file with name=$name in **files** folder
 * packageTestFile($name) - get full name of file with name=$name in **tests/files** folder
-* Package/Test trait added with folowing methods: 
+* Package/Test trait added with following methods: 
     * foreachTrue(array $values)
     * foreachFalse(array $values)
     * foreachEquals(array $values)
