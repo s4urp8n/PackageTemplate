@@ -24,7 +24,8 @@ Use this template package structure to build your own packages and tests
     * foreachNotEquals(array $values)
     * foreachSame(array $values)
     * foreachNotSame(array $values)
-
+    * assertException(callable $callback, $expectedException = 'Exception', $expectedCode = null, $expectedMessage = null)
+    
 ## Run tests
 
 For testing PHPUnit installed required
