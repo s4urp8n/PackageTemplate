@@ -2,19 +2,19 @@
 
 class ModifyMeTest extends PHPUnit\Framework\TestCase
 {
-    
-    use Package\Test;
-    
+
+    use \Zver\Package\Test;
+
     public static function setUpBeforeClass()
     {
-        
+
     }
-    
+
     public static function tearDownAfterClass()
     {
-        
+
     }
-    
+
     public function testMethod1()
     {
         $this->foreachSame(
@@ -26,7 +26,7 @@ class ModifyMeTest extends PHPUnit\Framework\TestCase
             ]
         );
     }
-    
+
     public function testMethod2()
     {
         $this->foreachSame(
@@ -37,5 +37,5 @@ class ModifyMeTest extends PHPUnit\Framework\TestCase
             ]
         );
     }
-    
+
 }
