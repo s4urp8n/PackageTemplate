@@ -1,7 +1,7 @@
 {
   "name": "zver/package-template",
   "description": "this is universal package template for development and testing and composer distribution",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "config": {
     "optimize-autoloader": true
   },
@@ -19,7 +19,7 @@
     }
   },
   "require": {
-    "zver/common": "dev-master"
+    "zver/common": "^2.1"
   },
   "require-dev": {
   }

@@ -1,12 +1,10 @@
 <?php
 namespace Sub;
 
-use Zver\Package\Common;
+use Zver\Common;
 
 class SubModifyMe
 {
-
-    use Common;
 
     public static function method1($arg1 = 0, $arg2 = null)
     {
@@ -20,12 +18,12 @@ class SubModifyMe
 
     public static function gitKeep()
     {
-        return static::getPackageFilePath('.gitkeep');
+        return Common::getPackageFilePath('.gitkeep');
     }
 
     public static function gitTestKeep()
     {
-        return static::getPackageTestFilePath('.gitkeep');
+        return Common::getPackageTestFilePath('.gitkeep');
     }
 
 }

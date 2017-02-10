@@ -1,9 +1,9 @@
 <?php
 
+use Zver\Common;
+
 class ModifyMe
 {
-
-    use \Zver\Package\Common;
 
     public static function method1($arg1 = 0, $arg2 = null)
     {
@@ -17,12 +17,12 @@ class ModifyMe
 
     public static function gitKeep()
     {
-        return static::getPackageFilePath('.gitkeep');
+        return Common::getPackageFilePath('.gitkeep');
     }
 
     public static function gitTestKeep()
     {
-        return static::getPackageTestFilePath('.gitkeep');
+        return Common::getPackageTestFilePath('.gitkeep');
     }
 
 }
