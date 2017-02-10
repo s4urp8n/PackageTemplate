@@ -1,7 +1,7 @@
     
 # Package-template
 
-Use this template package structure to build your own packages and tests
+Use this template package structure to build your own packages and tests and composer distribution
 
 ## Structure
 
