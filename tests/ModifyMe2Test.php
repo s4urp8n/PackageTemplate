@@ -3,7 +3,7 @@
 class ModifyMe2Test extends PHPUnit\Framework\TestCase
 {
 
-    use \Zver\Package\Test;
+    use \Zver\Package\Helper;
 
     public static function setUpBeforeClass()
     {
@@ -33,10 +33,10 @@ class ModifyMe2Test extends PHPUnit\Framework\TestCase
         $gitKeep = 'Save files for your packages in this folder';
         $gitTestKeep = 'Save files for your tests in this folder';
 
-        $this->assertSame(file_get_contents(\Zver\Common::getPackageFilePath('.gitkeep')), $gitKeep);
+        $this->assertSame(file_get_contents(static::getPackagePath('/files/.gitkeep')), $gitKeep);
         $this->assertSame(file_get_contents(\Sub\SubModifyMe::gitKeep('.gitkeep')), $gitKeep);
         $this->assertSame(file_get_contents(\ModifyMe::gitKeep('.gitkeep')), $gitKeep);
-        $this->assertSame(file_get_contents(\Zver\Common::getPackageTestFilePath('.gitkeep')), $gitTestKeep);
+        $this->assertSame(file_get_contents(static::getPackagePath('/tests/files/.gitkeep')), $gitTestKeep);
         $this->assertSame(file_get_contents(\Sub\SubModifyMe::gitTestKeep('.gitkeep')), $gitTestKeep);
         $this->assertSame(file_get_contents(\ModifyMe::gitTestKeep('.gitkeep')), $gitTestKeep);
     }

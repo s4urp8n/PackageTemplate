@@ -3,7 +3,7 @@
 class ModifyMeTest extends PHPUnit\Framework\TestCase
 {
 
-    use \Zver\Package\Test;
+    use \Zver\Package\Helper;
 
     public static function setUpBeforeClass()
     {
